@@ -20,6 +20,7 @@ Dependencies needed: `air`, `here`, `containers`
 ```
 
 - Copy `Hanzi2Pinyin.hs` and `Hanzi2PinyinData.hs` to your project and import them :)
+- You can also check out [example](example.hs) :)
 
 ## API
 
