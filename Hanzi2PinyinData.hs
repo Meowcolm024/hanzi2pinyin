@@ -2,6 +2,8 @@
 Original work `sort-by-pinyin` by JinjingWang (Jinjing Wang <nfjinjing@gmail.com>)
 Hackage: https://hackage.haskell.org/package/sort-by-pinyin-2018.4.9
 Licensced under BSD3
+
+Modefied: updated data
 -}
 
 {-# LANGUAGE QuasiQuotes #-}
@@ -15,10 +17,10 @@ pinyin_data = [here|
 #
 #	Name:            Unicode Pinyin table
 #	Unicode version: 1.1
-#	Table version:   0.21
+#	Table version:   0.496
 #	Table format:    Format A
-#	Date:            17 April 1996
-#	Author:          Koichi Yasuoka <yasuoka@kudpc.kyoto-u.ac.jp>
+#	Date:            18 August 1997
+#	Author:          Koichi Yasuoka <yasuoka@kanji.zinbun.kyoto-u.ac.jp>
 #
 #	General notes:
 #
@@ -29,7 +31,7 @@ pinyin_data = [here|
 #	<cwittern@conline.central.de>, Jim Breen <jwb@rdt.monash.edu.au>,
 #	and Jack Halpern <jhalpern@super.win.or.jp>.
 #
-#	Format:  Nine tab-separated columns
+#	Format:  Six tab-separated columns
 #	         Column #1 is the Unicode (in hex)
 #	         Columns #2 to #6 are Pinyin (tone '5' means Qingsheng)
 #
@@ -57,7 +59,7 @@ pinyin_data = [here|
 4E11	chou3
 4E12	chou3
 4E13	zhuan1
-4E14	qie3	ju1
+4E14	qie3
 4E15	pi1
 4E16	shi4
 4E17	shi4
@@ -76,7 +78,7 @@ pinyin_data = [here|
 4E24	liang3
 4E25	yan2
 4E26	bing4
-4E27	sang1	sang4
+4E27	sang1	sang4	sang5
 4E28	shu4
 4E29	jiu1
 4E2A	ge4
@@ -98,18 +100,18 @@ pinyin_data = [here|
 4E3A	wei4	wei2
 4E3B	zhu3
 4E3C	jing3	dan3
-4E3D	li4	li2
+4E3D	li4
 4E3E	ju3
 4E3F	pie3
 4E40	fu2
 4E41	yi2
-4E42	yi4	ai4
+4E42	yi4
 4E43	nai3
 4E44
 4E45	jiu3
 4E46	jiu3
 4E47	tuo1
-4E48	yao1	mo2
+4E48	me5
 4E49	yi4
 4E4A
 4E4B	zhi1
@@ -163,7 +165,7 @@ pinyin_data = [here|
 4E7B
 4E7C
 4E7D
-4E7E	gan1	qian2
+4E7E	qian2
 4E7F	zhi4
 4E80	gui1	jun1	qiu1
 4E81	gan1
@@ -173,7 +175,7 @@ pinyin_data = [here|
 4E85	jue2
 4E86	liao3	le5
 4E87
-4E88	yu2	yu3
+4E88	yu3
 4E89	zheng1
 4E8A	shi4
 4E8B	shi4
@@ -198,7 +200,7 @@ pinyin_data = [here|
 4E9E	ya4	ya3
 4E9F	ji2	qi4
 4EA0	tou2
-4EA1	wang2	wu2
+4EA1	wang2
 4EA2	kang4
 4EA3	ta4
 4EA4	jiao1
@@ -216,10 +218,10 @@ pinyin_data = [here|
 4EB0	jing1
 4EB1	ye4
 4EB2	qin1	qing4
-4EB3	bo4
+4EB3	bo2
 4EB4	you4
 4EB5	xie4
-4EB6	dan3
+4EB6	dan3	dan4
 4EB7	lian2
 4EB8	duo3
 4EB9	wei3	wei4
@@ -234,7 +236,7 @@ pinyin_data = [here|
 4EC2	le4
 4EC3	ding1
 4EC4	ze4
-4EC5	jin3	jin4
+4EC5	jin3
 4EC6	pu1	pu2
 4EC7	chou2	qiu2
 4EC8	ba1
@@ -262,7 +264,7 @@ pinyin_data = [here|
 4EDE	ren4
 4EDF	qian1
 4EE0	gan3
-4EE1	yi4	ge1
+4EE1	ge1
 4EE2	di2
 4EE3	dai4
 4EE4	ling4	ling2	ling3
@@ -294,7 +296,7 @@ pinyin_data = [here|
 4EFE	di1
 4EFF	fang3
 4F00	zhong1
-4F01	qi3	qi4
+4F01	qi3
 4F02	pei4
 4F03	yu2
 4F04	diao4
@@ -309,7 +311,7 @@ pinyin_data = [here|
 4F0D	wu3
 4F0E	ji4
 4F0F	fu2
-4F10	fa2	fa1
+4F10	fa2
 4F11	xiu1
 4F12	jin4
 4F13	bei1
@@ -325,14 +327,14 @@ pinyin_data = [here|
 4F1D	yun2
 4F1E	san3
 4F1F	wei3
-4F20	zhuan4
+4F20	zhuan4	chuan2
 4F21	che1
 4F22	ya2
 4F23	xian4
 4F24	shang1
 4F25	chang1
 4F26	lun2
-4F27	cang1	chen5
+4F27	cang1
 4F28	xun4
 4F29	xin4
 4F2A	wei3
@@ -354,13 +356,13 @@ pinyin_data = [here|
 4F3A	si4	ci4
 4F3B	beng1
 4F3C	si4	shi4
-4F3D	jia1	qie2
+4F3D	jia1	qie2	ga1
 4F3E	pi1
 4F3F	yi4
 4F40	si4	shi4
 4F41	ai3
 4F42	zheng1	zheng4
-4F43	dian4	tian2
+4F43	dian4
 4F44	han2
 4F45	mai4
 4F46	dan4
@@ -378,15 +380,15 @@ pinyin_data = [here|
 4F52	yang1
 4F53	ti3
 4F54	zhan4
-4F55	he2	he4
+4F55	he2
 4F56	bi4
 4F57	tuo2
 4F58	she2
-4F59	yu2	tu2
-4F5A	yi4	die2
+4F59	yu2
+4F5A	yi4
 4F5B	fo2	fu2
-4F5C	zuo1
-4F5D	kou4
+4F5C	zuo4	zuo1
+4F5D	gou1
 4F5E	ning4
 4F5F	tong2
 4F60	ni3
@@ -409,15 +411,15 @@ pinyin_data = [here|
 4F71	fa3
 4F72	ming2
 4F73	jia1
-4F74	er4	nai4
+4F74	nai4
 4F75	bing4
 4F76	ji2
 4F77	heng2
 4F78	huo2
 4F79	gui3
 4F7A	quan2
-4F7B	tiao1	tiao2
-4F7C	jiao3	jia3
+4F7B	tiao1
+4F7C	jiao3
 4F7D	ci4
 4F7E	yi4
 4F7F	shi3
@@ -430,7 +432,7 @@ pinyin_data = [here|
 4F86	lai2
 4F87	yi2
 4F88	chi3
-4F89	kua1	kua3
+4F89	kua3
 4F8A	guang1
 4F8B	li4
 4F8C	yin1
@@ -489,7 +491,7 @@ pinyin_data = [here|
 4FC1	yu3
 4FC2	xi4
 4FC3	cu4
-4FC4	e2	e4
+4FC4	e2
 4FC5	qiu2
 4FC6	xu2
 4FC7	kuang3
@@ -513,12 +515,12 @@ pinyin_data = [here|
 4FD9	xi1
 4FDA	li3
 4FDB	mian3
-4FDC	ping1	ping2
+4FDC	ping1
 4FDD	bao3
 4FDE	yu2
 4FDF	si4	qi2
 4FE0	xia2
-4FE1	xin4	shen1
+4FE1	xin4
 4FE2	xiu1
 4FE3	yu3
 4FE4	ti4
@@ -534,12 +536,12 @@ pinyin_data = [here|
 4FEE	xiu1
 4FEF	fu3
 4FF0	he2
-4FF1	ju4	ju1
+4FF1	ju4
 4FF2	xiao4
 4FF3	pai2
 4FF4	jian4
-4FF5	biao3
-4FF6	chu4
+4FF5	biao4
+4FF6	ti4	chu4
 4FF7	fei4
 4FF8	feng4
 4FF9	ya4
@@ -573,7 +575,7 @@ pinyin_data = [here|
 5015	chui2
 5016	xing4
 5017	peng2
-5018	tang3	chang2
+5018	tang3
 5019	hou4
 501A	yi3
 501B	qi1
@@ -582,7 +584,7 @@ pinyin_data = [here|
 501E	jing4	liang4
 501F	jie4
 5020	xu1
-5021	chang4	chang1
+5021	chang4
 5022	jie2
 5023	fang3
 5024	zhi2
@@ -593,7 +595,7 @@ pinyin_data = [here|
 5029	qian4
 502A	ni2
 502B	lun2
-502C	zhuo1	zhuo2
+502C	zhuo1
 502D	wo1
 502E	luo3
 502F	song1
@@ -663,7 +665,7 @@ pinyin_data = [here|
 506F	yi3
 5070	xie4
 5071	xun2
-5072	si1
+5072	si1	cai1
 5073	duan1
 5074	ce4
 5075	zhen1
@@ -677,7 +679,7 @@ pinyin_data = [here|
 507D	wei4
 507E	fen4
 507F	chang2
-5080	gui1	kui3
+5080	kui3
 5081	sou3
 5082	chi3
 5083	su4
@@ -690,7 +692,7 @@ pinyin_data = [here|
 508A	yun3
 508B	gou4
 508C	ma4
-508D	bang4	bang1
+508D	bang4
 508E	dian1
 508F	tang2
 5090	hao1
@@ -699,7 +701,7 @@ pinyin_data = [here|
 5093	shan1
 5094	qian4
 5095	jue2
-5096	cang1	chen5
+5096	cang1
 5097	chu4
 5098	san3
 5099	bei4
@@ -712,7 +714,7 @@ pinyin_data = [here|
 50A0	fa2
 50A1	bing4	bing1
 50A2	jia1
-50A3	tai4
+50A3	dai3
 50A4	zai4
 50A5	tang3
 50A6
@@ -789,7 +791,7 @@ pinyin_data = [here|
 50ED	jian4
 50EE	tong2
 50EF	lin2
-50F0	bo2	fu2
+50F0	bo2
 50F1	gu4
 50F2	xian1
 50F3	su4
@@ -868,8 +870,8 @@ pinyin_data = [here|
 513C	yan3
 513D	lei4
 513E	nang4
-513F	er2	ren2
-5140	wu4	wu1
+513F	er2
+5140	wu4
 5141	yun3
 5142	zan1
 5143	yuan2
@@ -882,19 +884,19 @@ pinyin_data = [here|
 514A	dui4
 514B	ke4
 514C	dui4
-514D	mian3	wen4
+514D	mian3
 514E	tu4
 514F	chang2	zhang3
 5150	er2
 5151	dui4
-5152	er2	er1
+5152	er2
 5153	jin1
 5154	tu4
 5155	si4
 5156	yan3
 5157	yan3
 5158	shi3
-5159	shi2ke4
+5159	shi2	ke4
 515A	dang3
 515B	qian1
 515C	dou1
@@ -902,7 +904,7 @@ pinyin_data = [here|
 515E	mao2
 515F	xin1
 5160	dou1
-5161	bai3ke4
+5161	bai3	ke4
 5162	jing1
 5163	li3
 5164	kuang4
@@ -912,7 +914,7 @@ pinyin_data = [here|
 5168	quan2
 5169	liang3
 516A	yu2	shu4
-516B	ba1	ba2
+516B	ba1
 516C	gong1
 516D	liu4	lu4
 516E	xi1
@@ -926,7 +928,7 @@ pinyin_data = [here|
 5176	qi2
 5177	ju4
 5178	dian3
-5179	zi1
+5179	zi1	ci2
 517A
 517B	yang3
 517C	jian1
@@ -951,7 +953,7 @@ pinyin_data = [here|
 518F	jiong3
 5190	mao4	mo4
 5191	zhou4
-5192	mao4	mo4
+5192	mao4
 5193	gou4
 5194	xu3
 5195	mian3
@@ -993,7 +995,7 @@ pinyin_data = [here|
 51B9	fu3
 51BA	min3
 51BB	dong4
-51BC	sheng3
+51BC	xian3
 51BD	lie4
 51BE	xia2
 51BF	jian1
@@ -1029,7 +1031,7 @@ pinyin_data = [here|
 51DD	ning2
 51DE	xi1
 51DF	du2
-51E0	ji1
+51E0	ji1	ji3
 51E1	fan2
 51E2	fan2
 51E3	fan2
@@ -1054,13 +1056,13 @@ pinyin_data = [here|
 51F6	xiong1
 51F7	kuai4
 51F8	tu1
-51F9	ao1	wa1
+51F9	ao1
 51FA	chu1
 51FB	ji1
 51FC	dang4
 51FD	han2
 51FE	han2
-51FF	zao2	zuo4
+51FF	zao2
 5200	dao1
 5201	diao1
 5202	dao1
@@ -1080,7 +1082,7 @@ pinyin_data = [here|
 5210	dan3
 5211	xing2
 5212	hua2	hua4
-5213	wan1
+5213	wan2
 5214	jue2
 5215	li2
 5216	yue4
@@ -1116,11 +1118,11 @@ pinyin_data = [here|
 5234	duo4
 5235	er4
 5236	zhi4
-5237	shua1	shua4
+5237	shua1
 5238	quan4	xuan4
 5239	cha4	sha1
 523A	ci4
-523B	ke4	ke1
+523B	ke4
 523C	jie2
 523D	gui4
 523E	ci4
@@ -1137,7 +1139,7 @@ pinyin_data = [here|
 5249	cuo4
 524A	xue1	xiao1
 524B	ke4
-524C	la4	la2
+524C	la4
 524D	qian2
 524E	cha4
 524F	chuan4
@@ -1156,7 +1158,7 @@ pinyin_data = [here|
 525C	wan1
 525D	bo1
 525E	ji1
-525F	duo2
+525F	duo1
 5260	qing2
 5261	yan3	shan4
 5262	zhuo2
@@ -1186,7 +1188,7 @@ pinyin_data = [here|
 527A	li2
 527B	fou2
 527C	shan1
-527D	piao4	piao1
+527D	piao1
 527E	kou1
 527F	jiao3	chao1
 5280	gua1
@@ -1231,7 +1233,7 @@ pinyin_data = [here|
 52A7	zhi3
 52A8	dong4
 52A9	zhu4
-52AA	nu3	nao2
+52AA	nu3
 52AB	jie2
 52AC	qu2
 52AD	shao4
@@ -1277,7 +1279,7 @@ pinyin_data = [here|
 52D5	dong4
 52D6	xu4
 52D7	xu4
-52D8	kan1	kan4
+52D8	kan1
 52D9	wu4
 52DA	yi4
 52DB	xun1
@@ -1315,7 +1317,7 @@ pinyin_data = [here|
 52FB	yun2
 52FC	jiu1
 52FD	bao4
-52FE	gou1
+52FE	gou1	gou4
 52FF	wu4
 5300	yun2
 5301
@@ -1399,12 +1401,12 @@ pinyin_data = [here|
 534F	xie2
 5350	wan4
 5351	bei1
-5352	zu2	cu4
-5353	zhuo1	zhuo2
+5352	zu2
+5353	zhuo2
 5354	xie2
-5355	dan1	chan2
+5355	dan1	chan2	shan4
 5356	mai4
-5357	nan2	na1
+5357	nan2
 5358	dan1	chan2
 5359	ji2
 535A	bo2
@@ -1416,7 +1418,7 @@ pinyin_data = [here|
 5360	zhan1	zhan4
 5361	qia3	ka3
 5362	lu2
-5363	you3	you4
+5363	you3
 5364	lu3
 5365	xi1
 5366	gua4
@@ -1430,7 +1432,7 @@ pinyin_data = [here|
 536E	zhi1
 536F	mao3
 5370	yin4
-5371	wei1	wei2
+5371	wei1
 5372	shao4
 5373	ji2
 5374	que4
@@ -1466,7 +1468,7 @@ pinyin_data = [here|
 5392	ke4
 5393	ya2
 5394	zhi4
-5395	ce4	si5
+5395	ce4
 5396	pang2
 5397	ti2
 5398	li2
@@ -1529,7 +1531,7 @@ pinyin_data = [here|
 53D1	fa1	fa4
 53D2	ruo4
 53D3	shi4
-53D4	shu1	shu2
+53D4	shu1
 53D5	zhui4
 53D6	qu3
 53D7	shou4
@@ -1557,7 +1559,7 @@ pinyin_data = [here|
 53ED	ba1
 53EE	ding1
 53EF	ke3	ke4
-53F0	tai2	tai1
+53F0	tai2
 53F1	chi4
 53F2	shi3
 53F3	you4
@@ -1576,12 +1578,12 @@ pinyin_data = [here|
 5400	mie1
 5401	xu1	yu4
 5402	mang2
-5403	chi1	ji2
+5403	chi1
 5404	ge4
 5405	xuan1
 5406	yao1
 5407	zi3
-5408	he2
+5408	he2	ge3
 5409	ji2
 540A	diao4
 540B	cun4
@@ -1606,7 +1608,7 @@ pinyin_data = [here|
 541E	tun1
 541F	yin2
 5420	fei4
-5421	bi3	pi3
+5421	bi3
 5422	qin4
 5423	qin4
 5424	jie4
@@ -1617,7 +1619,7 @@ pinyin_data = [here|
 5429	fen1
 542A	e2
 542B	han2
-542C	ting1	yin3
+542C	ting1
 542D	hang2	keng1
 542E	shun3
 542F	qi3
@@ -1630,7 +1632,7 @@ pinyin_data = [here|
 5436	na4
 5437	chuo4
 5438	xi1
-5439	chui1	chui4
+5439	chui1
 543A	dou1
 543B	wen3
 543C	hou3
@@ -1647,7 +1649,7 @@ pinyin_data = [here|
 5447	qi3
 5448	cheng2
 5449	wu2
-544A	gao4	gu4
+544A	gao4
 544B	fu1
 544C	jiao4
 544D	hong1
@@ -1657,10 +1659,10 @@ pinyin_data = [here|
 5451	tun1
 5452	m2
 5453	yi4
-5454	tai3	tai4
-5455	ou3	ou4
+5454	dai1
+5455	ou3
 5456	li4
-5457	bai4	bei5
+5457	bei5
 5458	yuan2	yun2	yun4
 5459	guo1
 545A
@@ -1673,7 +1675,7 @@ pinyin_data = [here|
 5461	wen3
 5462	ni2	ne5
 5463	mou2
-5464	ling2	ling4
+5464	ling4
 5465	ran3
 5466	you1
 5467	di3
@@ -1687,12 +1689,12 @@ pinyin_data = [here|
 546F	ping2
 5470	zi3
 5471	gua1
-5472	zi1
+5472	ci1
 5473	wei4
 5474	xu1
 5475	he1	ke1
 5476	nao2
-5477	xia1	xia2
+5477	xia1
 5478	pei1
 5479	yi4
 547A	xiao1
@@ -1701,7 +1703,7 @@ pinyin_data = [here|
 547D	ming4
 547E	da2
 547F	qu1
-5480	ju3	zui3
+5480	ju3
 5481	gan1
 5482	za1
 5483	tuo1
@@ -1721,9 +1723,9 @@ pinyin_data = [here|
 5491	da1
 5492	zhou4
 5493	wa3
-5494	ka3	ka1
+5494	ka3
 5495	gu1
-5496	ka1
+5496	ka1	ga1
 5497	zuo3
 5498	bu4
 5499	long2
@@ -1752,7 +1754,7 @@ pinyin_data = [here|
 54B0	shuai4
 54B1	zan2
 54B2	xiao4
-54B3	ke2	hai1	ka3
+54B3	ke2	hai1
 54B4	hui1
 54B5	kua1
 54B6	huai4
@@ -1760,7 +1762,7 @@ pinyin_data = [here|
 54B8	xian2
 54B9	e4
 54BA	xuan3
-54BB	xiu1	xu3
+54BB	xiu1
 54BC	guo1	kuai1
 54BD	yan1	yan4	ye4
 54BE	lao3
@@ -1782,20 +1784,20 @@ pinyin_data = [here|
 54CE	ai1
 54CF	gen2
 54D0	kuang1
-54D1	ya1
+54D1	ya1	ya3
 54D2	da1
 54D3	xiao1
 54D4	bi4
-54D5	hui4
+54D5	hui4	yue3
 54D6
-54D7	hua1	hua2	ye4
+54D7	hua1	hua2
 54D8
 54D9	kuai4
 54DA	duo3
 54DB
 54DC	ji4
 54DD	nong2
-54DE	mou1	mou2
+54DE	mou1
 54DF	yo5	yo1
 54E0	hao4
 54E1	yuan2	yun2	yun4
@@ -1811,12 +1813,12 @@ pinyin_data = [here|
 54EB	zu2
 54EC	he1
 54ED	ku1
-54EE	xiao1
+54EE	xiao4
 54EF	xian4
 54F0	lao2
 54F1	bei4
 54F2	zhe2
-54F3	zha1	zha2
+54F3	zha1
 54F4	liang4
 54F5	ba1
 54F6	mi3
@@ -1861,7 +1863,7 @@ pinyin_data = [here|
 551D	gong4
 551E	dou3
 551F
-5520	lao2	lao4
+5520	lao2
 5521	liang3
 5522	suo3
 5523	zao4
@@ -1873,10 +1875,10 @@ pinyin_data = [here|
 5529	wo1
 552A	feng3
 552B	yin2
-552C	hu3	xia4
+552C	hu3
 552D	qi1
 552E	shou4
-552F	wei2	wei3
+552F	wei2
 5530	shua1
 5531	chang4
 5532	er2
@@ -1889,12 +1891,12 @@ pinyin_data = [here|
 5539	yu2
 553A	tian3
 553B	lai2
-553C	sha4	za1
+553C	sha4
 553D	xi1
 553E	tuo4
 553F	hu1
 5540	ai2
-5541	zhou1	zhao1	zou1
+5541	zhou1	zhao1
 5542	nou4
 5543	ken3
 5544	zhuo2
@@ -1921,7 +1923,7 @@ pinyin_data = [here|
 5559	zi3
 555A	bi3
 555B	cui4
-555C	chuo4	chuai4
+555C	chuo4
 555D	he2
 555E	ya3	ya1
 555F	qi3
@@ -1930,12 +1932,12 @@ pinyin_data = [here|
 5562	liang3
 5563	xian2
 5564	pi2
-5565	sha4	sha2
+5565	sha2
 5566	la5	la1
 5567	ze2
 5568	qing1
 5569	gua4
-556A	pa1	pai1
+556A	pa1
 556B	zhe3
 556C	se4
 556D	zhuan4
@@ -1945,8 +1947,8 @@ pinyin_data = [here|
 5571	yan1
 5572	di4
 5573	quan2
-5574	tan1
-5575	bo5	bo1
+5574	tan1	chan3
+5575	bo5
 5576	ding4
 5577	lang1
 5578	xiao4
@@ -1957,14 +1959,14 @@ pinyin_data = [here|
 557D	an2
 557E	jiu1
 557F	dan4
-5580	ke4	ka1	ka4
+5580	ka1
 5581	yong2
 5582	wei4
 5583	nan2
 5584	shan4
 5585	yu4
 5586	zhe2
-5587	la3	la1	la2
+5587	la3
 5588	jie1
 5589	hou2
 558A	han3
@@ -1972,7 +1974,7 @@ pinyin_data = [here|
 558C	zhou1
 558D	chai2
 558E	kuai1
-558F	re3
+558F	re3	nuo4
 5590	yu4
 5591	yin1
 5592	zan3
@@ -1995,7 +1997,7 @@ pinyin_data = [here|
 55A3	xu3
 55A4	huang2
 55A5	du4
-55A6	yan2
+55A6	nie4
 55A7	xuan1
 55A8	liang4
 55A9	yu4
@@ -2012,7 +2014,7 @@ pinyin_data = [here|
 55B4	wei1
 55B5	miao1
 55B6	ying2
-55B7	pen1	pen4
+55B7	pen1	pen4	pen5
 55B8
 55B9	kui2
 55BA	xi4
@@ -2025,7 +2027,7 @@ pinyin_data = [here|
 55C1	ti2
 55C2	yao2
 55C3	he4
-55C4	a2	sha4
+55C4	a2
 55C5	xiu4
 55C6	qiang1	qiang4
 55C7	se4
@@ -2033,13 +2035,13 @@ pinyin_data = [here|
 55C9	su4
 55CA	hong3
 55CB	xie1
-55CC	yi4	ai4
-55CD	suo1	shuo4
+55CC	ai4
+55CD	suo1
 55CE	ma5	ma3
 55CF	cha1
 55D0	hai4
 55D1	ke4
-55D2	ta4
+55D2	da1
 55D3	sang3
 55D4	chen1
 55D5	ru4	nou4
@@ -2052,7 +2054,7 @@ pinyin_data = [here|
 55DC	shi4
 55DD	ge2
 55DE	zi1
-55DF	jie1	jue1
+55DF	jie1
 55E0	luo4
 55E1	weng1
 55E2	wa4
@@ -2060,8 +2062,8 @@ pinyin_data = [here|
 55E4	chi1
 55E5	hao2
 55E6	suo1
-55E7	jia1lun2
-55E8	hai1	hai4	hei1
+55E7	jia1	lun2
+55E8	hai1
 55E9	suo3
 55EA	qin2
 55EB	nie4
@@ -2071,7 +2073,7 @@ pinyin_data = [here|
 55EF	ng4	ng2	ng3
 55F0	ge4
 55F1	na2
-55F2	dia3	dia1
+55F2	dia3
 55F3	ai4	ai3
 55F4
 55F5	tong1
@@ -2083,10 +2085,10 @@ pinyin_data = [here|
 55FB	zhe1
 55FC	mo4
 55FD	sou4
-55FE	sou3	zu2
+55FE	sou3
 55FF	tan3
 5600	di2	di1
-5601	qi1	za1
+5601	qi1
 5602	jiao4
 5603	chong1
 5604	jiao1
@@ -2095,9 +2097,9 @@ pinyin_data = [here|
 5607	san1
 5608	cao2
 5609	jia1
-560A	yai1
+560A
 560B	xiao1
-560C	biao1	piao4
+560C	piao4
 560D	lou5	lou2
 560E	ga1	ga3
 560F	gu3	jia3
@@ -2109,10 +2111,10 @@ pinyin_data = [here|
 5615	xian1
 5616	ze2
 5617	chang2
-5618	xu1	shi1
+5618	xu1
 5619	po2
-561A	de2
-561B	ma5	ma2
+561A	de1	dei1
+561B	ma5
 561C	ma4	ma3	mo4
 561D	hu2
 561E	lei5
@@ -2129,13 +2131,13 @@ pinyin_data = [here|
 5629	hua1	hua2	ye4
 562A	mai3
 562B	ran2
-562C	zuo1	chuai4	zhuai4
+562C	zuo1	chuai4
 562D	peng1
 562E	lao2	lao4
 562F	xiao4
 5630	ji1
 5631	zhu3
-5632	chao2	zhao1
+5632	chao2
 5633	kui4
 5634	zui3
 5635	xiao1
@@ -2148,7 +2150,7 @@ pinyin_data = [here|
 563C	xu4
 563D	chan3
 563E	dan4
-563F	mo4	hai1	hei1
+563F	hei1
 5640	xun4
 5641	wu4
 5642	zun3
@@ -2183,7 +2185,7 @@ pinyin_data = [here|
 565F	ying4
 5660	da1
 5661	zhan1
-5662	yu3	o1	ou4
+5662	o1
 5663	zhou4
 5664	jin4
 5665	nong2
@@ -2192,13 +2194,13 @@ pinyin_data = [here|
 5668	qi4
 5669	e4
 566A	zao4
-566B	yi1	yi4
+566B	yi1
 566C	shi4
 566D	jiao4
 566E	yuan4
 566F	ai4	ai3
 5670	yong1
-5671	jue2	xue1	xue2
+5671	xue2
 5672	kuai4
 5673	yu3
 5674	pen1	pen4
@@ -2217,7 +2219,7 @@ pinyin_data = [here|
 5681	di2
 5682	han3
 5683	ta4
-5684	huo4	huo1
+5684	huo4	huo1	o3
 5685	ru2
 5686	hao1
 5687	xia4	he4
@@ -2248,7 +2250,7 @@ pinyin_data = [here|
 56A0	liu2
 56A1
 56A2	nang2	nang1
-56A3	xiao1	ao2
+56A3	xiao1
 56A4	mo2
 56A5	yan4
 56A6	li4
@@ -2306,7 +2308,7 @@ pinyin_data = [here|
 56DA	qiu2
 56DB	si4
 56DC	nin2
-56DD	jian3	nan1
+56DD	jian3
 56DE	hui2
 56DF	xin4
 56E0	yin1
@@ -2362,7 +2364,7 @@ pinyin_data = [here|
 5712	yuan2
 5713	yuan2
 5714	e4
-5715	tu2shu1guan3
+5715	tu2	shu1	guan3
 5716	tu2
 5717	tu2
 5718	tuan2
@@ -2382,7 +2384,7 @@ pinyin_data = [here|
 5726
 5727	ya1	ya4
 5728	zai4
-5729	wei2	xu1	yu2
+5729	wei2	xu1
 572A	ge1
 572B	yu4
 572C	wu1
@@ -2399,11 +2401,11 @@ pinyin_data = [here|
 5737
 5738
 5739	kuang4
-573A	chang2	chang3
+573A	chang2	chang3	chang5
 573B	qi2
 573C	nie4
 573D	mo4
-573E	ji2	ji1	se4
+573E	ji1
 573F	jia2
 5740	zhi3
 5741	zhi3
@@ -2412,7 +2414,7 @@ pinyin_data = [here|
 5744	tou2
 5745	qin3
 5746	fen2
-5747	jun1	yun4
+5747	jun1
 5748	keng1
 5749	dun4
 574A	fang1	fang2
@@ -2420,7 +2422,7 @@ pinyin_data = [here|
 574C	ben4
 574D	tan1
 574E	kan3
-574F	pi1	huai4	pei1
+574F	huai4
 5750	zuo4
 5751	keng1
 5752	bi4
@@ -2450,13 +2452,13 @@ pinyin_data = [here|
 576A	ping2
 576B	dian4
 576C	wa1
-576D	ni2	ni3
+576D	ni2
 576E	tai2	tai1
 576F	pi1
 5770	jiong1
 5771	yang1
 5772	fo2
-5773	ao4	ao1
+5773	ao4
 5774	liu4
 5775	qiu1
 5776	mu4
@@ -2472,7 +2474,7 @@ pinyin_data = [here|
 5780	hu1
 5781	zhi4
 5782	chui2
-5783	la1	le4
+5783	la1
 5784	long3
 5785	long3
 5786	lu2
@@ -2481,7 +2483,7 @@ pinyin_data = [here|
 5789	pao2
 578A
 578B	xing2
-578C	tong2	tong3
+578C	tong2
 578D	ji4
 578E	ke4
 578F	lu4
@@ -2525,7 +2527,7 @@ pinyin_data = [here|
 57B5	an1
 57B6	xing1
 57B7	xian4
-57B8	yuan4
+57B8	huan4	huan2
 57B9	bang1
 57BA	pei1
 57BB	ba4
@@ -2548,12 +2550,12 @@ pinyin_data = [here|
 57CC	lang4
 57CD	xuan4
 57CE	cheng2
-57CF	yan2	shan1
+57CF	shan1
 57D0	jin1
 57D1	zhe2
-57D2	le4	lie4
+57D2	lie4
 57D3	lie4
-57D4	bu4	bu3	pu3
+57D4	bu4	pu3
 57D5	cheng2
 57D6
 57D7	bu4
@@ -2594,7 +2596,7 @@ pinyin_data = [here|
 57FA	ji1
 57FB	zhun3
 57FC	qi2
-57FD	sao4	sao3
+57FD	sao4
 57FE	ju4
 57FF	ni2	ni4
 5800	ku1	jue2
@@ -2603,12 +2605,12 @@ pinyin_data = [here|
 5803	kun1
 5804	ni4
 5805	jian1
-5806	dui1	zui1
+5806	dui1
 5807	jin3
 5808	gang1
 5809	yu4
 580A	e4
-580B	peng2
+580B	peng2	beng4
 580C	gu4
 580D	tu4
 580E	leng4	ling2
@@ -2618,7 +2620,7 @@ pinyin_data = [here|
 5812
 5813	an4
 5814	chen1
-5815	duo4	hui1
+5815	duo4
 5816	nao3
 5817	tu1
 5818	cheng2
@@ -2681,7 +2683,7 @@ pinyin_data = [here|
 5851	su4
 5852	shi2
 5853	mi4
-5854	ta3	da5
+5854	ta3
 5855	weng3
 5856	cheng2
 5857	tu2
@@ -2896,21 +2898,21 @@ pinyin_data = [here|
 5928	ze4
 5929	tian1
 592A	tai4
-592B	fu1	fu2
+592B	fu1
 592C	guai4
-592D	yao3	yao1
+592D	yao1
 592E	yang1
-592F	hang1	ben4
+592F	hang1
 5930	gao3
 5931	shi1
-5932	ben3
+5932	tao1	ben3
 5933	tai4
 5934	tou2
 5935	yan3
 5936	bi3
 5937	yi2
 5938	kua1
-5939	jia1	jia2
+5939	jia1	jia2	ga1
 593A	duo2
 593B
 593C	kuang3
@@ -2921,11 +2923,11 @@ pinyin_data = [here|
 5941	lian2
 5942	huan4
 5943	di1
-5944	yan3	yan1
+5944	yan3
 5945	pao4
 5946	juan4
 5947	qi2	ji1
-5948	nai4	nai3
+5948	nai4
 5949	feng4
 594A	xie2
 594B	fen4
@@ -2934,14 +2936,14 @@ pinyin_data = [here|
 594E	kui2
 594F	zou4
 5950	huan4
-5951	qi4	xie4
+5951	qi4
 5952	kai1
 5953	she1
 5954	ben1	ben4
 5955	yi4
 5956	jiang3
 5957	tao4
-5958	zang4	zhuang3
+5958	zhuang3
 5959	ben3
 595A	xi1
 595B	huang3
@@ -2968,7 +2970,7 @@ pinyin_data = [here|
 5970	bei4
 5971	lian2
 5972	che3
-5973	nu:3	ru3
+5973	nu:3
 5974	nu2
 5975	ding3
 5976	nai3
@@ -3021,13 +3023,13 @@ pinyin_data = [here|
 59A5	tuo3
 59A6	feng1
 59A7	yuan2
-59A8	fang2	fang1
+59A8	fang2
 59A9	wu3
 59AA	yu4
 59AB	gui1
 59AC	du4
 59AD	ba2
-59AE	ni1	ni2
+59AE	ni1
 59AF	zhou2
 59B0	zhou2
 59B1	zhao1
@@ -3040,7 +3042,7 @@ pinyin_data = [here|
 59B8	e1
 59B9	mei4
 59BA	mo4
-59BB	qi1	qi4
+59BB	qi1
 59BC	bi4
 59BD	shen1
 59BE	qie4
@@ -3065,7 +3067,7 @@ pinyin_data = [here|
 59D1	gu1
 59D2	si4
 59D3	xing4
-59D4	wei3	wei1
+59D4	wei3
 59D5	zi1
 59D6	ju4
 59D7	shan1
@@ -3080,9 +3082,9 @@ pinyin_data = [here|
 59E0	shang4
 59E1	kuo4
 59E2	juan1
-59E3	jiao3
+59E3	jiao1
 59E4	gou4
-59E5	mu3	lao3
+59E5	lao3
 59E6	jian1
 59E7	jian1
 59E8	yi2
@@ -3125,7 +3127,7 @@ pinyin_data = [here|
 5A0D	cheng2
 5A0E	xie4
 5A0F	mang2
-5A10	fu
+5A10
 5A11	suo1
 5A12	mu3
 5A13	wei3
@@ -3141,7 +3143,7 @@ pinyin_data = [here|
 5A1D	pei1
 5A1E	sui1
 5A1F	juan1
-5A20	shen1	chen2	zhen4
+5A20	shen1
 5A21	zhi4
 5A22	han2
 5A23	di4
@@ -3150,7 +3152,7 @@ pinyin_data = [here|
 5A26	pin2
 5A27	tui4
 5A28	xian4
-5A29	mian3	wan3
+5A29	mian3
 5A2A	wu2
 5A2B	yan2
 5A2C	wu3
@@ -3163,7 +3165,7 @@ pinyin_data = [here|
 5A33	li4
 5A34	xian2
 5A35	ju1
-5A36	qu3	qu4
+5A36	qu3
 5A37	chui2
 5A38	qi1
 5A39	xian2
@@ -3193,7 +3195,7 @@ pinyin_data = [here|
 5A51	rui2
 5A52	tan2
 5A53	fei1
-5A54	wei
+5A54
 5A55	jie2
 5A56	tian1
 5A57	ni2
@@ -3219,7 +3221,7 @@ pinyin_data = [here|
 5A6B	kun1
 5A6C	yin2
 5A6D	ya4
-5A6E	ju
+5A6E
 5A6F	li4
 5A70	dian3
 5A71	xian2
@@ -3245,7 +3247,7 @@ pinyin_data = [here|
 5A85	dan1
 5A86	ruan3
 5A87	qin1
-5A88	hui
+5A88
 5A89	wu1
 5A8A	qian2
 5A8B	chun1
@@ -3261,7 +3263,7 @@ pinyin_data = [here|
 5A95	an1
 5A96	ying2
 5A97	xuan1
-5A98	jie
+5A98
 5A99	wei1
 5A9A	mei4
 5A9B	yuan4	yuan2
@@ -3327,7 +3329,7 @@ pinyin_data = [here|
 5AD7	yu4
 5AD8	lei2
 5AD9	xuan2
-5ADA	man4
+5ADA	man4	man1
 5ADB	yi1
 5ADC	zhang1
 5ADD	kang1
@@ -3369,7 +3371,7 @@ pinyin_data = [here|
 5B01	deng1
 5B02	zhi2
 5B03	xu1
-5B04	yi
+5B04
 5B05	hua4
 5B06	xi1
 5B07	hui4
@@ -3393,7 +3395,7 @@ pinyin_data = [here|
 5B19	qiang2
 5B1A	lian2
 5B1B	huan2	qiong2	xuan1
-5B1C	xin
+5B1C
 5B1D	niao3
 5B1E	dong3
 5B1F	yi4
@@ -3408,7 +3410,7 @@ pinyin_data = [here|
 5B28	ci2
 5B29	yu2
 5B2A	pin2
-5B2B	yong
+5B2B
 5B2C	xu1
 5B2D	nai3
 5B2E	yan1
@@ -3416,7 +3418,7 @@ pinyin_data = [here|
 5B30	ying1
 5B31	can2
 5B32	niao3
-5B33	wo
+5B33
 5B34	ying2
 5B35	mian2
 5B36
@@ -3445,7 +3447,7 @@ pinyin_data = [here|
 5B4D	yan2
 5B4E	zhu3
 5B4F	lan3
-5B50	zi3	zi2	zi5
+5B50	zi3	zi5
 5B51	jie2
 5B52	jue2
 5B53	jue2
@@ -3456,7 +3458,7 @@ pinyin_data = [here|
 5B58	cun2
 5B59	sun1
 5B5A	fu2
-5B5B	bei4
+5B5B	bei4	bo2
 5B5C	zi1
 5B5D	xiao4
 5B5E	xin4
@@ -3473,7 +3475,7 @@ pinyin_data = [here|
 5B69	hai2
 5B6A	luan2
 5B6B	sun1
-5B6C	huai4	nao1
+5B6C	nao1
 5B6D	mie1
 5B6E	cong2
 5B6F	jian1
@@ -3487,18 +3489,18 @@ pinyin_data = [here|
 5B77	li2
 5B78	xue2	xiao2
 5B79	bo4
-5B7A	ru2	ru4
+5B7A	ru2
 5B7B	nai2
 5B7C	nie4
 5B7D	nie4
 5B7E	ying1
 5B7F	luan2
 5B80	mian2
-5B81	zhu4	ning2	ning4
+5B81	ning2	ning4
 5B82	rong3
 5B83	ta1
 5B84	gui3
-5B85	zhai2	zhe4
+5B85	zhai2
 5B86	qiong2
 5B87	yu3
 5B88	shou3
@@ -3520,7 +3522,7 @@ pinyin_data = [here|
 5B98	guan1
 5B99	zhou4
 5B9A	ding4
-5B9B	wan3	yuan1
+5B9B	wan3
 5B9C	yi2
 5B9D	bao3
 5B9E	shi2
@@ -3559,7 +3561,7 @@ pinyin_data = [here|
 5BBF	su4	xiu3	xiu4
 5BC0	cai3	shen3
 5BC1	zan3
-5BC2	ji4	ji2
+5BC2	ji4
 5BC3	yuan1
 5BC4	ji4
 5BC5	yin2
@@ -3616,7 +3618,7 @@ pinyin_data = [here|
 5BF8	cun4
 5BF9	dui4
 5BFA	si4
-5BFB	xun2	xin2
+5BFB	xun2
 5BFC	dao3
 5BFD	lu:3	luo1
 5BFE	dui4
@@ -3648,7 +3650,7 @@ pinyin_data = [here|
 5C18	chen2
 5C19	shang4
 5C1A	shang4
-5C1B	mo
+5C1B	yuan2
 5C1C	ga2
 5C1D	chang2
 5C1E	liao2	liao3
@@ -3679,12 +3681,12 @@ pinyin_data = [here|
 5C37	gan1
 5C38	shi1
 5C39	yin3
-5C3A	chi3	che3
+5C3A	chi3
 5C3B	kao1
 5C3C	ni2
 5C3D	jin3	jin4
 5C3E	wei3	yi3
-5C3F	niao4	ni4	sui1
+5C3F	niao4	sui1
 5C40	ju2
 5C41	pi4
 5C42	ceng2
@@ -3732,17 +3734,17 @@ pinyin_data = [here|
 5C6C	shu3	zhu3
 5C6D	xi4
 5C6E	che4
-5C6F	tun2	zhun1
+5C6F	tun2
 5C70	ni4
 5C71	shan1
-5C72	gai4
+5C72	wa1
 5C73	xian1
 5C74	li4
 5C75	e4
 5C76
 5C77
 5C78	long2
-5C79	yi4	ge1
+5C79	yi4
 5C7A	qi3
 5C7B	ren4
 5C7C	wu4
@@ -3757,7 +3759,7 @@ pinyin_data = [here|
 5C85	ban3
 5C86	yao3
 5C87	ang2
-5C88	ya2	xia1
+5C88	ya2
 5C89	wu4
 5C8A	jie2
 5C8B	e4
@@ -3794,7 +3796,7 @@ pinyin_data = [here|
 5CAA	fu2
 5CAB	xiu4
 5CAC	jia3
-5CAD	ling2	ling3
+5CAD	ling3
 5CAE	tuo2
 5CAF	pei1
 5CB0	you3
@@ -3824,14 +3826,14 @@ pinyin_data = [here|
 5CC8	luo4
 5CC9	e1
 5CCA	fu4
-5CCB	xun2	xun1
+5CCB	xun2
 5CCC	die2
 5CCD	lu4
 5CCE	lang3
 5CCF	er3
 5CD0	gai1
 5CD1	quan2
-5CD2	tong2
+5CD2	tong2	dong4
 5CD3	yi2
 5CD4	mu3
 5CD5	shi2
@@ -3849,7 +3851,7 @@ pinyin_data = [here|
 5CE1	xia2
 5CE2	li3
 5CE3	yao2
-5CE4	jiao4	jiao2	qiao2
+5CE4	jiao4	qiao2
 5CE5	zheng1
 5CE6	luan2
 5CE7	jiao1
@@ -3887,7 +3889,7 @@ pinyin_data = [here|
 5D07	chong2
 5D08	chong2
 5D09	ta4
-5D0A	lin
+5D0A
 5D0B	hua2	hua4
 5D0C	ju1
 5D0D	lai2
@@ -3899,7 +3901,7 @@ pinyin_data = [here|
 5D13	gu4
 5D14	cui1
 5D15	ya2
-5D16	ya2	ai2
+5D16	ya2
 5D17	gang3	gang1
 5D18	lun2
 5D19	lun2
@@ -3913,7 +3915,7 @@ pinyin_data = [here|
 5D21	han2
 5D22	zheng1
 5D23	wei3
-5D24	yao2	xiao2
+5D24	yao2
 5D25	pi3
 5D26	yan1
 5D27	song1
@@ -3967,7 +3969,7 @@ pinyin_data = [here|
 5D57	sui4
 5D58	rong2
 5D59	ke1
-5D5A	xin1
+5D5A	qin1
 5D5B	yu2
 5D5C	qi2
 5D5D	lou3
@@ -4000,7 +4002,7 @@ pinyin_data = [here|
 5D78	zong1
 5D79	jiang4
 5D7A	liao2
-5D7B	kang
+5D7B
 5D7C	chan3
 5D7D	di4
 5D7E	cen1
@@ -4037,7 +4039,7 @@ pinyin_data = [here|
 5D9D	deng4
 5D9E	duo4
 5D9F	zun1
-5DA0	jiao4	jiao2	qiao2
+5DA0	jiao4	qiao2
 5DA1	gui4
 5DA2	yao2
 5DA3	qiao2
@@ -4082,7 +4084,7 @@ pinyin_data = [here|
 5DCA	ying3
 5DCB	kui1
 5DCC	yan2
-5DCD	wei1	wei2
+5DCD	wei1
 5DCE	nao2
 5DCF	quan2
 5DD0	chao1
@@ -4112,7 +4114,7 @@ pinyin_data = [here|
 5DE8	ju4
 5DE9	gong3
 5DEA
-5DEB	wu1	wu2
+5DEB	wu1
 5DEC
 5DED
 5DEE	chai1	cha1	cha4	ci1
@@ -4139,7 +4141,7 @@ pinyin_data = [here|
 5E03	bu4
 5E04	ding1
 5E05	shuai4
-5E06	fan1	fan2
+5E06	fan1
 5E07	nie4
 5E08	shi1
 5E09	fen1
@@ -4172,7 +4174,7 @@ pinyin_data = [here|
 5E24	ru2
 5E25	shuai4	shuo4
 5E26	dai4
-5E27	zheng4
+5E27	zhen1
 5E28	shui4
 5E29	qiao4
 5E2A	zhen1
@@ -4197,7 +4199,7 @@ pinyin_data = [here|
 5E3D	mao4
 5E3E	du3
 5E3F	hou2
-5E40	zheng4
+5E40	zhen1
 5E41	xu1
 5E42	mi4
 5E43	wei2
@@ -4251,7 +4253,7 @@ pinyin_data = [here|
 5E73	ping2
 5E74	nian2
 5E75	jian1
-5E76	bing4	bing1
+5E76	bing4
 5E77	bing4
 5E78	xing4
 5E79	gan4	gan1
@@ -4282,7 +4284,7 @@ pinyin_data = [here|
 5E92
 5E93	ku4
 5E94	ying4	ying1
-5E95	di3	de5
+5E95	di3
 5E96	pao2
 5E97	dian4
 5E98	ya1
@@ -4447,7 +4449,7 @@ pinyin_data = [here|
 5F37	qiang2	jiang4	qiang3
 5F38	beng1
 5F39	dan4	tan2
-5F3A	qiang2	qiang3
+5F3A	qiang2	qiang3	jiang4
 5F3B	bi4
 5F3C	bi4
 5F3D	she4
@@ -4508,7 +4510,7 @@ pinyin_data = [here|
 5F74	zhuo2
 5F75	tuo3
 5F76	ji2
-5F77	pang2	fang3
+5F77	pang2
 5F78	zhong1
 5F79	yi4
 5F7A	wang2
@@ -4517,7 +4519,7 @@ pinyin_data = [here|
 5F7D	di1
 5F7E	ling3
 5F7F	fu2
-5F80	wang3	wang4
+5F80	wang3
 5F81	zheng1
 5F82	cu2
 5F83	wang3	wang4
@@ -4527,7 +4529,7 @@ pinyin_data = [here|
 5F87	xun4
 5F88	hen3
 5F89	yang2
-5F8A	huai2	hui2
+5F8A	huai2
 5F8B	lu:4
 5F8C	hou4
 5F8D	wang3
@@ -4563,21 +4565,21 @@ pinyin_data = [here|
 5FAB	wei3
 5FAC	pang2
 5FAD	yao2
-5FAE	wei1	wei2
+5FAE	wei1
 5FAF	xi1
 5FB0	zheng1
 5FB1	piao4
 5FB2	chi2
 5FB3	de2
 5FB4	zheng1
-5FB5	zheng1	zhi3
+5FB5	zhi3
 5FB6	bie2
 5FB7	de2
 5FB8	chong1
 5FB9	che4
 5FBA	jiao3
 5FBB	wei4
-5FBC	jiao4	jia3	jiao3
+5FBC	jiao4	jiao3
 5FBD	hui1
 5FBE	mei2
 5FBF	long4
@@ -4596,16 +4598,16 @@ pinyin_data = [here|
 5FCC	ji4
 5FCD	ren3
 5FCE	ren2
-5FCF	chan4	qian1	qian3
+5FCF	chan4
 5FD0	tan3
 5FD1	te4
-5FD2	te4	tei1	tui1
+5FD2	te4
 5FD3	gan1
 5FD4	qi4
 5FD5	dai4
 5FD6	cun3
 5FD7	zhi4
-5FD8	wang4	wang2
+5FD8	wang4
 5FD9	mang2
 5FDA	xi1
 5FDB	fan2
@@ -4659,13 +4661,13 @@ pinyin_data = [here|
 600B	min2
 600C	pi1
 600D	zuo4
-600E	zen3	ze3
+600E	zen3
 600F	yang4
 6010	kou4
 6011	ban4
 6012	nu4
 6013	nao2
-6014	zheng1	zheng4
+6014	zheng1
 6015	pa4
 6016	bu4
 6017	tie1
@@ -4673,8 +4675,8 @@ pinyin_data = [here|
 6019	hu4
 601A	ju4
 601B	da2
-601C	lian2	ling2
-601D	si1	sai1
+601C	lian2
+601D	si1
 601E	zhou4
 601F	di4
 6020	dai4
@@ -4688,11 +4690,11 @@ pinyin_data = [here|
 6028	yuan4
 6029	ni2
 602A	guai4
-602B	fu2	fei4
+602B	fu2
 602C	xi4
 602D	bi4
 602E	you1
-602F	qie4	que4
+602F	qie4
 6030	xuan4
 6031	zong1
 6032	bing3
@@ -4751,12 +4753,12 @@ pinyin_data = [here|
 6067	nu:4
 6068	hen4
 6069	en1
-606A	ke4	que4
-606B	tong1	dong4
+606A	ke4
+606B	dong4
 606C	tian2
 606D	gong1
 606E	quan2
-606F	xi1	xi2
+606F	xi1
 6070	qia4
 6071	yue4
 6072	peng1
@@ -4802,12 +4804,12 @@ pinyin_data = [here|
 609A	song3
 609B	quan1
 609C	cheng3
-609D	kui1	li3
+609D	kui1
 609E	wu4
 609F	wu4
 60A0	you1
 60A1	li2
-60A2	liang4	lang3
+60A2	liang4
 60A3	huan4
 60A4	cong1
 60A5	yi4
@@ -4848,7 +4850,7 @@ pinyin_data = [here|
 60C8	guo3
 60C9	chan1
 60CA	jing1
-60CB	wan3	wan4
+60CB	wan3
 60CC	yuan1
 60CD	jin1
 60CE	ji4
@@ -4865,8 +4867,8 @@ pinyin_data = [here|
 60D9	chuo4
 60DA	hu1
 60DB	hun1
-60DC	xi1	xi2
-60DD	tang3	chang3
+60DC	xi1
+60DD	chang3
 60DE	xin1
 60DF	wei2
 60E0	hui4
@@ -4877,7 +4879,7 @@ pinyin_data = [here|
 60E5	yong3
 60E6	dian4
 60E7	ju4
-60E8	can3	can4
+60E8	can3
 60E9	cheng2
 60EA	de2
 60EB	bei4
@@ -4950,7 +4952,7 @@ pinyin_data = [here|
 612E	yao2
 612F	song3
 6130	huang4
-6131	shitsu
+6131
 6132	gu3
 6133	ju4
 6134	chuang4
@@ -4977,7 +4979,7 @@ pinyin_data = [here|
 6149	xu4
 614A	qian4	qie4
 614B	tai4
-614C	huang1
+614C	huang1	huang5
 614D	yun4
 614E	shen4
 614F	ming3
@@ -4994,7 +4996,7 @@ pinyin_data = [here|
 615A	can2
 615B	cui2
 615C	min3
-615D	te4	ni4
+615D	ni4
 615E	zhang1
 615F	tong4
 6160	ao4
@@ -5005,7 +5007,7 @@ pinyin_data = [here|
 6165	zao4
 6166	jiu4
 6167	hui4
-6168	kai3	kai4
+6168	kai3
 6169	lian2
 616A	ou4	ou1
 616B	song3
@@ -5020,7 +5022,7 @@ pinyin_data = [here|
 6174	zhe2
 6175	yong1
 6176	qing4
-6177	kang1	kang3
+6177	kang1
 6178	di4
 6179	zhi2
 617A	lu:2
@@ -5146,7 +5148,7 @@ pinyin_data = [here|
 61F2	cheng2
 61F3
 61F4	chan4
-61F5	meng2	meng3
+61F5	meng3
 61F6	lan3
 61F7	huai2
 61F8	xuan2
@@ -5172,13 +5174,13 @@ pinyin_data = [here|
 620C	xu1	qu5
 620D	shu4
 620E	rong2
-620F	xi4	hu1
+620F	xi4
 6210	cheng2
 6211	wo3
 6212	jie4
 6213	ge1
 6214	jian1
-6215	qiang1	qiang2
+6215	qiang1
 6216	huo4
 6217	qiang1	qiang4
 6218	zhan4
@@ -5239,9 +5241,9 @@ pinyin_data = [here|
 624F	qiu2
 6250	le4
 6251	pu1
-6252	ba1	pa1	pa2
-6253	da3
-6254	reng1	reng3
+6252	ba1	pa2
+6253	da3	da2
+6254	reng1
 6255	fu2	bi4
 6256
 6257	zai4
@@ -5269,17 +5271,17 @@ pinyin_data = [here|
 626D	niu3
 626E	ban4
 626F	che3
-6270	rao3	you4
+6270	rao3
 6271	xi1
 6272	qian2
-6273	ban1	pan1
+6273	ban1
 6274	jia2
 6275	yu2
 6276	fu2
 6277	ao4
 6278	xi1
 6279	pi1
-627A	di3
+627A	zhi3
 627B	zi4
 627C	e4
 627D	dun4
@@ -5319,7 +5321,7 @@ pinyin_data = [here|
 629F	tuan2
 62A0	kou1
 62A1	lun2	lun1
-62A2	qiang3	qiang1
+62A2	qiang3
 62A3
 62A4	hu4
 62A5	bao4
@@ -5351,19 +5353,19 @@ pinyin_data = [here|
 62BF	min3
 62C0	chu4
 62C1	jia1
-62C2	fu2	bi4
+62C2	fu2
 62C3	zha3
 62C4	zhu3
-62C5	dan4	dan1	dan3
-62C6	chai1	ca1
+62C5	dan4	dan1
+62C6	chai1
 62C7	mu3
-62C8	nian1	nian3
+62C8	nian1
 62C9	la1	la2	la3
 62CA	fu3
 62CB	pao1
 62CC	ban4
 62CD	pai1
-62CE	ling1
+62CE	lin1
 62CF	na2
 62D0	guai3
 62D1	qian2
@@ -5374,7 +5376,7 @@ pinyin_data = [here|
 62D6	tuo1
 62D7	ao4	niu4
 62D8	ju1
-62D9	zhuo2	zhuo1
+62D9	zhuo1
 62DA	pan4
 62DB	zhao1
 62DC	bai4
@@ -5388,12 +5390,12 @@ pinyin_data = [here|
 62E4	qia2
 62E5	yong1
 62E6	lan2
-62E7	ning2	ning3	ning4
+62E7	ning3	ning2
 62E8	bo1
 62E9	ze2	zhai2
 62EA	qian1
 62EB	hen2
-62EC	gua1	kuo4
+62EC	kuo4
 62ED	shi4
 62EE	jie2
 62EF	zheng3
@@ -5411,7 +5413,7 @@ pinyin_data = [here|
 62FB	hui1
 62FC	pin1
 62FD	zhuai4
-62FE	shi2	she4
+62FE	shi2
 62FF	na2
 6300	bo4
 6301	chi2
@@ -5420,14 +5422,14 @@ pinyin_data = [here|
 6304	kuo4
 6305	duo3
 6306	duo3
-6307	zhi3	zhi1
+6307	zhi3
 6308	qie4
 6309	an4
 630A	nong4	long4
 630B	zhen4
 630C	ge2
 630D	jiao4
-630E	ku1	kua4
+630E	kua4
 630F	dong4
 6310	ru2	na2
 6311	tiao1	tiao3
@@ -5446,12 +5448,12 @@ pinyin_data = [here|
 631E	ta4
 631F	xie2
 6320	nao2
-6321	dang3	dang4
-6322	jiao3	jia3
+6321	dang3
+6322	jiao3
 6323	zheng1	zheng4
 6324	ji3
 6325	hui1
-6326	xun2
+6326	xian2
 6327
 6328	ai1	ai2
 6329	tuo1
@@ -5463,7 +5465,7 @@ pinyin_data = [here|
 632F	zhen4
 6330	cheng2
 6331	suo1
-6332	suo1	sa1
+6332	suo1
 6333	keng1	keng3
 6334	mei3
 6335	long4	nong4
@@ -5473,13 +5475,13 @@ pinyin_data = [here|
 6339	yi4
 633A	ting3
 633B	shan1
-633C	nuo4	ruo2
+633C	nuo4
 633D	wan3
 633E	xie2
 633F	cha1
 6340	feng1
 6341	jiao3	jia3
-6342	wu3	wu2
+6342	wu3
 6343	jun4
 6344	jiu4
 6345	tong3
@@ -5488,7 +5490,7 @@ pinyin_data = [here|
 6348	tu2
 6349	zhuo1
 634A	pou2
-634B	le4	lu:3	luo1
+634B	lu:3	luo1
 634C	ba1
 634D	han4
 634E	shao1	shao4
@@ -5504,7 +5506,7 @@ pinyin_data = [here|
 6358	jun4
 6359	yi4
 635A	zhai1
-635B	ly3
+635B	lu:3
 635C	sou1
 635D	tuo1
 635E	lao1
@@ -5524,7 +5526,7 @@ pinyin_data = [here|
 636C	fu3
 636D	bai3
 636E	ju4	ju1
-636F	dao3
+636F	dao2
 6370	wo3
 6371	ai2	ai1
 6372	juan3
@@ -5548,7 +5550,7 @@ pinyin_data = [here|
 6384	lun2	lun1
 6385	qing4
 6386	gang1
-6387	duo2	duo1
+6387	duo1	duo5
 6388	shou4
 6389	diao4
 638A	pou2	pou3
@@ -5563,7 +5565,7 @@ pinyin_data = [here|
 6393	shu2
 6394	qian1
 6395	ling2
-6396	ye4
+6396	ye4	ye1
 6397	ya3
 6398	jue2
 6399	zheng1	zheng4
@@ -5585,21 +5587,21 @@ pinyin_data = [here|
 63A9	yan3
 63AA	cuo4
 63AB	zou1
-63AC	ju2	ju1
+63AC	ju1
 63AD	tian4
 63AE	qian2
 63AF	ken4
-63B0	bai1	bo4
+63B0	bai1
 63B1	shou3	pa2
 63B2	jie1
 63B3	lu3
-63B4	guo2	guai1
+63B4	guai1
 63B5
 63B6
 63B7	zhi4
-63B8	dan3	shan3	shan4
+63B8	dan3
 63B9
-63BA	can4	chan1	shan3
+63BA	chan1	shan3
 63BB	sao1
 63BC	guan4
 63BD	peng4
@@ -5656,7 +5658,7 @@ pinyin_data = [here|
 63F0	chong4
 63F1	shuo4
 63F2	she2	die2
-63F3	xie4
+63F3	xie1
 63F4	yuan2
 63F5	qian2
 63F6	ye2
@@ -5674,20 +5676,20 @@ pinyin_data = [here|
 6402	lou3	lou1
 6403	zong3
 6404	geng1
-6405	jiao3	jia3
+6405	jiao3
 6406	gou4
 6407	qin4
 6408	yong3
 6409	que4
 640A	chou1
-640B	chi3	chuai1
+640B	chuai1
 640C	zhan3
 640D	sun3
 640E	sun1
 640F	bo2
 6410	chu4
 6411	rong3
-6412	beng4
+6412	bang4	peng2
 6413	cuo1
 6414	sao1
 6415	ke4
@@ -5730,7 +5732,7 @@ pinyin_data = [here|
 643A	xie2
 643B	nuo4
 643C	quan2
-643D	cha2	ca1
+643D	cha2
 643E	zha4
 643F	ge2
 6440	wu3
@@ -5756,14 +5758,14 @@ pinyin_data = [here|
 6454	shuai1
 6455	di4
 6456	qi4
-6457	sou
-6458	zhai1	zhe2
+6457
+6458	zhai1
 6459	lian3
 645A	cheng1
 645B	chi1
 645C	guan4
 645D	lu4
-645E	luo2	luo4
+645E	luo4
 645F	lou3	lou1
 6460	zong3
 6461	gai4	xi4
@@ -5789,12 +5791,12 @@ pinyin_data = [here|
 6475	suo3
 6476	tuan2
 6477	zhao1
-6478	mo1	mo2
+6478	mo1
 6479	mo2
 647A	zhe2
 647B	chan1	shan3
 647C	keng1
-647D	piao3	biao1
+647D	biao1	biao4
 647E	jiang4
 647F	yin1
 6480	gou4
@@ -5812,14 +5814,14 @@ pinyin_data = [here|
 648C	kui4
 648D	zan3
 648E	yi4
-648F	xun2
+648F	xian2
 6490	cheng1
 6491	cheng1
 6492	sa3	sa1
 6493	nao2
 6494	heng4
 6495	si1
-6496	qian3
+6496	han4
 6497	huang2
 6498	da1
 6499	zun3
@@ -5827,7 +5829,7 @@ pinyin_data = [here|
 649B	lin3
 649C	zheng3
 649D	hui1
-649E	zhuang4	chuang2
+649E	zhuang4
 649F	jiao3	jia3
 64A0	ji3
 64A1	cao1
@@ -5838,11 +5840,11 @@ pinyin_data = [here|
 64A6	che3
 64A7	jue2
 64A8	xiao1
-64A9	liao2	liao1	liao4
+64A9	liao2	liao1
 64AA	ben4
 64AB	fu3
-64AC	qiao4	qiao1
-64AD	bo4	bo1
+64AC	qiao4
+64AD	bo1
 64AE	cuo1	zuo3
 64AF	zhuo2
 64B0	zhuan4
@@ -5863,7 +5865,7 @@ pinyin_data = [here|
 64BF	jian3
 64C0	gan3
 64C1	yong3	yong1
-64C2	lei2	lei1	lei4
+64C2	lei2	lei4
 64C3	kuo3
 64C4	lu3
 64C5	shan4
@@ -5874,7 +5876,7 @@ pinyin_data = [here|
 64CA	ji2	ji1
 64CB	dang3	dang4
 64CC	se4
-64CD	cao1	cao4
+64CD	cao1
 64CE	qing2
 64CF	jing4
 64D0	huan4
@@ -5909,7 +5911,7 @@ pinyin_data = [here|
 64ED	huo4
 64EE	ji2
 64EF	bin4
-64F0	ning2	ning3	ning4
+64F0	ning3	ning2
 64F1	ge1	ge2
 64F2	zhi4
 64F3	jie2
@@ -5934,8 +5936,8 @@ pinyin_data = [here|
 6506	nian3
 6507	xian3
 6508	jun4
-6509	huo4	huo1
-650A	lye4
+6509	huo1
+650A	lu:e4
 650B	la4
 650C	han4
 650D	ying2
@@ -5949,7 +5951,7 @@ pinyin_data = [here|
 6515	san1
 6516	ying1
 6517	mei2
-6518	rang2	rang3
+6518	rang3
 6519	chan1
 651A
 651B	cuan1
@@ -6024,10 +6026,10 @@ pinyin_data = [here|
 6560	duo2
 6561	yi4
 6562	gan3
-6563	san4	san3
+6563	san4	san3	san5
 6564	ke3
 6565	yan4
-6566	dun1	dui4
+6566	dun1
 6567	qi3
 6568	dou3
 6569	xiao4
@@ -6060,7 +6062,7 @@ pinyin_data = [here|
 6584	li4
 6585	xue2
 6586	xiao4
-6587	wen2	wen4
+6587	wen2
 6588	xue2
 6589	qi2	ji4	qi4
 658A	qi2	ji4	qi4
@@ -6081,7 +6083,7 @@ pinyin_data = [here|
 6599	liao4
 659A	jia3
 659B	hu2
-659C	xie2	xia2
+659C	xie2
 659D	jia3
 659E	yu3
 659F	zhen1
@@ -6089,7 +6091,7 @@ pinyin_data = [here|
 65A1	wo4
 65A2	tiao3	tou4
 65A3	dou4
-65A4	jin1
+65A4	jin1	jin5
 65A5	chi4
 65A6	yin2
 65A7	fu3
@@ -6113,15 +6115,15 @@ pinyin_data = [here|
 65B9	fang1
 65BA	xie4
 65BB	hang2
-65BC	yu2	wu1	yu1
+65BC	wu1	yu1
 65BD	shi1
 65BE	pei4
 65BF	you2
 65C0
-65C1	pang2	bang4
+65C1	pang2
 65C2	qi2
 65C3	zhan1
-65C4	mao2	mao4
+65C4	mao2
 65C5	lu:3
 65C6	pei4
 65C7	pi1
@@ -6149,7 +6151,7 @@ pinyin_data = [here|
 65DD	guai4
 65DE	sui4
 65DF	yu2
-65E0	wu2	mo2
+65E0	wu2
 65E1	ji4
 65E2	ji4
 65E3	ji4
@@ -6201,7 +6203,7 @@ pinyin_data = [here|
 6611	qin3
 6612	hu1
 6613	yi4
-6614	xi2	xi1
+6614	xi1
 6615	xin1
 6616	yan2
 6617	ze4
@@ -6234,7 +6236,7 @@ pinyin_data = [here|
 6632	fei4	fu2
 6633	die2
 6634	mao3
-6635	ni4	ni3
+6635	ni4
 6636	chang3
 6637	wen1
 6638	dong1
@@ -6314,9 +6316,9 @@ pinyin_data = [here|
 6682	zan4
 6683
 6684	xuan1
-6685	xuan3
+6685	geng4
 6686	yi2
-6687	xia2	xia4
+6687	xia2
 6688	yun1	yun4
 6689	hui1
 668A	fu3
@@ -6338,7 +6340,7 @@ pinyin_data = [here|
 669A	yao2
 669B	suo3
 669C	pu3
-669D	ming2	ming4
+669D	ming2
 669E	jiao3
 669F	kai3
 66A0	gao3
@@ -6394,15 +6396,15 @@ pinyin_data = [here|
 66D2	jiao3
 66D3	bao4
 66D4	jing4
-66D5	yian4
+66D5
 66D6	ai4
 66D7	ye4
 66D8	ru2
 66D9	shu3
 66DA	meng2
 66DB	xun1
-66DC	yao4	yue4
-66DD	pu4	bao4
+66DC	yao4
+66DD	pu4
 66DE	li4
 66DF	chen2
 66E0	kuang4
@@ -6424,7 +6426,7 @@ pinyin_data = [here|
 66F0	yue1
 66F1	yue1
 66F2	qu3	qu1
-66F3	zhuai4
+66F3	ye4
 66F4	geng4	geng1
 66F5	zhuai4
 66F6	hu1
@@ -6446,7 +6448,7 @@ pinyin_data = [here|
 6706	fen1
 6707	pi2	bi4
 6708	yue4
-6709	you3	you4
+6709	you3
 670A	ruan3
 670B	peng2
 670C	ban1
@@ -6461,14 +6463,14 @@ pinyin_data = [here|
 6715	zhen4
 6716	lang3
 6717	lang3
-6718	juan1
+6718	juan1	zui1
 6719	ming2
 671A	huang1
 671B	wang4
 671C	tun1
 671D	zhao1	chao2
 671E	ji1	qi1
-671F	ji1	qi1
+671F	qi1
 6720	ying1
 6721	zong3
 6722	wang4
@@ -6489,7 +6491,7 @@ pinyin_data = [here|
 6731	zhu1
 6732	ren2
 6733	ba1
-6734	po4	piao2	pu3
+6734	po4	piao2	pu3	po1
 6735	duo3
 6736	duo3
 6737	dao1
@@ -6510,7 +6512,7 @@ pinyin_data = [here|
 6746	gan1	gan3
 6747	wu1
 6748	cha1	cha4
-6749	shan1
+6749	shan1	sha1
 674A	xun2
 674B	fan2
 674C	wu4
@@ -6533,7 +6535,7 @@ pinyin_data = [here|
 675D	yi2
 675E	qi3
 675F	shu4
-6760	gang1
+6760	gang4
 6761	tiao2
 6762
 6763
@@ -6556,7 +6558,7 @@ pinyin_data = [here|
 6774	xian1
 6775	chu3
 6776	chun1
-6777	pa2	ba5
+6777	pa2
 6778	shu1
 6779	hua4
 677A	xin2
@@ -6569,7 +6571,7 @@ pinyin_data = [here|
 6781	ji2
 6782	yue4
 6783	yun2
-6784	gou1
+6784	gou4
 6785	ji1
 6786	mao2
 6787	pi2
@@ -6586,7 +6588,7 @@ pinyin_data = [here|
 6792	ya2
 6793	dou3
 6794	xun2
-6795	zhen3	zhen4
+6795	zhen3
 6796	yao3
 6797	lin2
 6798	rui4
@@ -6595,7 +6597,7 @@ pinyin_data = [here|
 679B	zhao4
 679C	guo3
 679D	zhi1
-679E	zong1
+679E	zong1	cong1
 679F	yun4
 67A0
 67A1	dou3
@@ -6630,14 +6632,14 @@ pinyin_data = [here|
 67BE	shi4
 67BF	nie4
 67C0	bi3
-67C1	duo4	duo1	tuo2
+67C1	tuo2
 67C2	yi2
 67C3	ling2
 67C4	bing3
 67C5	ni3
 67C6	la1
 67C7	he2
-67C8	pan2	ban4
+67C8	ban4
 67C9	fan2	bian1
 67CA	zhong1
 67CB	dai4
@@ -6669,7 +6671,7 @@ pinyin_data = [here|
 67E5	cha2	zha1
 67E6	dan4
 67E7	gu1
-67E8	pu
+67E8
 67E9	jiu4
 67EA	ao1
 67EB	fu2	bi4
@@ -6715,16 +6717,16 @@ pinyin_data = [here|
 6813	shuan1
 6814	qi4
 6815	zhen1
-6816	qi1	xi1
+6816	qi1
 6817	li4
 6818	chi2	yi2
 6819	xiang2
 681A	zhen4
 681B	li4
 681C	su4
-681D	gua1	kuo4
+681D	gua1
 681E	kan1
-681F	bing1
+681F	bing1	ben1
 6820	ren3
 6821	xiao4	jiao4
 6822	bo2	bai3
@@ -6747,7 +6749,7 @@ pinyin_data = [here|
 6833	lao3
 6834	zhan1
 6835	li4
-6836	yin
+6836
 6837	yang4
 6838	he2	hu2
 6839	gen1
@@ -6758,15 +6760,15 @@ pinyin_data = [here|
 683E	luan2
 683F	fa2
 6840	jie2
-6841	hang2	heng2
+6841	heng2
 6842	gui4
 6843	tao2
 6844	guang4	guang1
 6845	wei2
-6846	kuang4	kuang1
+6846	kuang4
 6847	ru2
 6848	an4
-6849	an4	an1
+6849	an1
 684A	juan4
 684B	yi2
 684C	zhuo1
@@ -6777,7 +6779,7 @@ pinyin_data = [here|
 6851	sang1
 6852	sang1
 6853	huan2
-6854	jie2	ju2
+6854	jie2
 6855	jiu4
 6856	xue4
 6857	duo4
@@ -6855,7 +6857,7 @@ pinyin_data = [here|
 689F	xiao1
 68A0	lu:3
 68A1	kuan3
-68A2	shao1	sao4
+68A2	shao1
 68A3	cen2
 68A4	fen1
 68A5	song1
@@ -6934,7 +6936,7 @@ pinyin_data = [here|
 68EE	sen1
 68EF	ren3
 68F0	chui2
-68F1	leng2	leng1	ling2
+68F1	leng2	ling2
 68F2	qi1	xi1
 68F3	zhuo2
 68F4	fu2
@@ -6997,7 +6999,7 @@ pinyin_data = [here|
 692D	tuo3
 692E	sen1
 692F	duo2
-6930	ye2	ye1
+6930	ye1
 6931	fu4
 6932	wei3
 6933	wei1
@@ -7043,7 +7045,7 @@ pinyin_data = [here|
 695B	hu4	ku3
 695C	hu2
 695D	lian4
-695E	leng2	leng4
+695E	leng2
 695F	ting2
 6960	nan2
 6961	yu2
@@ -7060,7 +7062,7 @@ pinyin_data = [here|
 696C	jie2
 696D	ye4
 696E	chu3
-696F	shun3
+696F	shun3	dun4
 6970	yu2
 6971	cou4
 6972	wei1
@@ -7068,7 +7070,7 @@ pinyin_data = [here|
 6974	di4
 6975	ji2
 6976	jie2
-6977	kai3	jie1
+6977	kai3
 6978	qiu1
 6979	ying2
 697A	rou2
@@ -7186,7 +7188,7 @@ pinyin_data = [here|
 69EA	gai4
 69EB	tuan2
 69EC	hua4
-69ED	cu4	qi1
+69ED	qi1
 69EE	sen1
 69EF	cui1
 69F0	beng4
@@ -7228,7 +7230,7 @@ pinyin_data = [here|
 6A14	chao2
 6A15	su4
 6A16	ke1
-6A17	shu1	chu1
+6A17	chu1
 6A18	tang2
 6A19	biao1
 6A1A	lu4
@@ -7276,7 +7278,7 @@ pinyin_data = [here|
 6A44	gan3
 6A45	mo2	mu2
 6A46	wu3
-6A47	qiao1	cui4
+6A47	qiao1
 6A48	rao2
 6A49	lin4
 6A4A	liu2
@@ -7294,7 +7296,7 @@ pinyin_data = [here|
 6A56	tang2
 6A57	meng2
 6A58	ju2
-6A59	cheng2	chen2
+6A59	cheng2
 6A5A	su4
 6A5B	jue2
 6A5C	jue2
@@ -7307,7 +7309,7 @@ pinyin_data = [here|
 6A63	ning3
 6A64	rui3
 6A65	zhu1
-6A66	chuang2	tong2
+6A66	tong2
 6A67	zeng1
 6A68	fen4
 6A69	qiong2
@@ -7349,14 +7351,14 @@ pinyin_data = [here|
 6A8D	yi4
 6A8E	qin2
 6A8F	pu3
-6A90	yan2	yin2
+6A90	yan2
 6A91	lei2
 6A92	feng1
 6A93	hui3
 6A94	dang3
 6A95	ji4
 6A96	sui4
-6A97	bo4	bo2
+6A97	bo4
 6A98	bi4
 6A99	ding3
 6A9A	chu3
@@ -7383,7 +7385,7 @@ pinyin_data = [here|
 6AAF	tai2
 6AB0	mian2
 6AB1	qi2
-6AB2	toan2
+6AB2
 6AB3	bin1	bing1
 6AB4	huo4
 6AB5	ji4
@@ -7417,7 +7419,7 @@ pinyin_data = [here|
 6AD1	lei2
 6AD2	sa4
 6AD3	lu3
-6AD4	li44
+6AD4
 6AD5	cuan2
 6AD6	lu:2
 6AD7	mie4
@@ -7493,7 +7495,7 @@ pinyin_data = [here|
 6B1D	yu4
 6B1E	ling2
 6B1F
-6B20	qian4
+6B20	qian4	qian5
 6B21	ci4
 6B22	huan1
 6B23	xin1
@@ -7517,10 +7519,10 @@ pinyin_data = [here|
 6B35	kuan3
 6B36	shuo4
 6B37	xi1
-6B38	e^1	e^2	e^3	e^4
+6B38	e^1	e^2	e^3	e^4	ai3	ai4
 6B39	yi1	qi1
 6B3A	qi1
-6B3B	hu1	chua1
+6B3B	hu1
 6B3C	chi3
 6B3D	qin1
 6B3E	kuan3
@@ -7529,7 +7531,7 @@ pinyin_data = [here|
 6B41	kan3
 6B42	chuan2
 6B43	sha4
-6B44	gua
+6B44
 6B45	yin1
 6B46	xin1
 6B47	xie1
@@ -7618,13 +7620,13 @@ pinyin_data = [here|
 6B9A	dan1
 6B9B	ji2
 6B9C	ye4
-6B9D	zhen
+6B9D
 6B9E	yun3
 6B9F	wen1
 6BA0	chou4	xiu4
 6BA1	bin4
 6BA2	ti4
-6BA3	jin3
+6BA3	jin4
 6BA4	shang1
 6BA5	yin2
 6BA6	diao1
@@ -7644,7 +7646,7 @@ pinyin_data = [here|
 6BB4	ou1
 6BB5	duan4
 6BB6	zhu4
-6BB7	yin1	yan1	yin3
+6BB7	yin1	yan1
 6BB8	qing4
 6BB9	yi1
 6BBA	sha1	shai4
@@ -7655,7 +7657,7 @@ pinyin_data = [here|
 6BBF	dian4
 6BC0	hui3
 6BC1	hui3
-6BC2	gu3	gu1
+6BC2	gu3
 6BC3	que4
 6BC4	ji1
 6BC5	yi4
@@ -7673,7 +7675,7 @@ pinyin_data = [here|
 6BD1	zuo3
 6BD2	du2
 6BD3	yu4
-6BD4	bi3	bi4
+6BD4	bi3
 6BD5	bi4
 6BD6	bi4
 6BD7	pi2
@@ -7710,7 +7712,7 @@ pinyin_data = [here|
 6BF6
 6BF7	mao4
 6BF8	sui1
-6BF9	yu1	shu1
+6BF9	shu1
 6BFA	yu1
 6BFB	tuo4
 6BFC	he2
@@ -7723,7 +7725,7 @@ pinyin_data = [here|
 6C03	tong2
 6C04	rong3
 6C05	chang3
-6C06	pu3	bang3
+6C06	pu3
 6C07	lu3
 6C08	zhan1
 6C09	sao4
@@ -7732,11 +7734,11 @@ pinyin_data = [here|
 6C0C	lu3
 6C0D	qu2
 6C0E	die2
-6C0F	shi4	zhi1
+6C0F	shi4
 6C10	di3	di1
 6C11	min2
 6C12	jue2
-6C13	mang2	meng2
+6C13	mang2
 6C14	qi4
 6C15	pie1
 6C16	nai3
@@ -7787,7 +7789,7 @@ pinyin_data = [here|
 6C43	bin1
 6C44	ze4
 6C45	mian3
-6C46	cuan1	tun3
+6C46	cuan1
 6C47	hui4
 6C48	diao1
 6C49	han4
@@ -7811,13 +7813,13 @@ pinyin_data = [here|
 6C5B	xun4
 6C5C	si4
 6C5D	ru3
-6C5E	gong3	hong4
+6C5E	gong3
 6C5F	jiang1
 6C60	chi2
 6C61	wu1
 6C62
 6C63
-6C64	tang1	shang1
+6C64	tang1
 6C65	zhi1
 6C66	chi2
 6C67	qian1
@@ -7841,7 +7843,7 @@ pinyin_data = [here|
 6C79	xiong1
 6C7A	jue2
 6C7B	hu3
-6C7C	niou1
+6C7C
 6C7D	qi4
 6C7E	fen2
 6C7F	xu4
@@ -7853,24 +7855,24 @@ pinyin_data = [here|
 6C85	yuan2
 6C86	hang4
 6C87	yan3
-6C88	chen2	shen3
+6C88	shen3
 6C89	chen2
 6C8A	dan4
 6C8B	you2
 6C8C	dun4	zhuan4
 6C8D	hu4
 6C8E	huo4
-6C8F	qie1	qi1
+6C8F	qi1
 6C90	mu4
 6C91	rou2
 6C92	mei2	mo4
-6C93	ta4
+6C93	ta4	da2	ta5
 6C94	mian3
 6C95	wu4
 6C96	chong1
 6C97	tian1
-6C98	bi3	pi2
-6C99	sha1	sha4
+6C98	bi3
+6C99	sha1
 6C9A	zhi3
 6C9B	pei4
 6C9C	pan4
@@ -7891,7 +7893,7 @@ pinyin_data = [here|
 6CAB	mo4
 6CAC	mei4
 6CAD	shu4
-6CAE	ju1	ju3	ju4
+6CAE	ju3	ju4
 6CAF	zan3
 6CB0	tuo1
 6CB1	tuo2
@@ -7908,18 +7910,18 @@ pinyin_data = [here|
 6CBC	zhao3
 6CBD	gu1
 6CBE	zhan1
-6CBF	yan2	yan4
+6CBF	yan2
 6CC0	si1
 6CC1	kuang4
 6CC2	jiong3
-6CC3	ju4	gou1	ju1
+6CC3	ju1
 6CC4	xie4
 6CC5	qiu2
 6CC6	yi4
 6CC7	jia1
 6CC8	zhong1
 6CC9	quan2
-6CCA	bo2	po4
+6CCA	bo2	po1
 6CCB	hui4
 6CCC	mi4	bi4
 6CCD	ben1
@@ -7930,20 +7932,20 @@ pinyin_data = [here|
 6CD2	gu1
 6CD3	hong2
 6CD4	gan1
-6CD5	fa3	fa4
+6CD5	fa3
 6CD6	mao3
 6CD7	si4
 6CD8	hu1
 6CD9	ping2
 6CDA	ci3
-6CDB	fan4	fan2
+6CDB	fan4
 6CDC	zhi1
 6CDD	su4
-6CDE	ning4	zhu3
+6CDE	ning4
 6CDF	cheng1
 6CE0	ling2
 6CE1	pao4	pao1
-6CE2	bo1	po1
+6CE2	bo1
 6CE3	qi4
 6CE4	si4
 6CE5	ni2	ni4
@@ -7990,13 +7992,13 @@ pinyin_data = [here|
 6D0E	ji4
 6D0F	er2
 6D10	xing2
-6D11	fu2
+6D11	fu2	fu4
 6D12	sa3
 6D13	zi4
 6D14	zhi3
 6D15	yin1
 6D16	wu2
-6D17	xi3
+6D17	xi3	xian3
 6D18	kao3
 6D19	zhu1
 6D1A	jiang4
@@ -8019,13 +8021,13 @@ pinyin_data = [here|
 6D2B	xu4
 6D2C	su4
 6D2D	kuang1
-6D2E	tao2	yao2
+6D2E	tao2
 6D2F	qie4	jie2
 6D30	ju4
 6D31	er3
 6D32	zhou1
 6D33	ru4
-6D34	ping2	beng4
+6D34	ping2
 6D35	xun2
 6D36	xiong1
 6D37	zhi4
@@ -8034,24 +8036,24 @@ pinyin_data = [here|
 6D3A	ming2
 6D3B	huo2
 6D3C	wa1
-6D3D	qia4	xia2
-6D3E	pai4	pa1
+6D3D	qia4
+6D3E	pai4
 6D3F	wu1
 6D40	qu3
 6D41	liu2
 6D42	yi4
 6D43	jia1
 6D44	jing4
-6D45	qian3	jian1
-6D46	jiang1	jiang4
+6D45	qian3
+6D46	jiang1
 6D47	jiao1
 6D48	zhen1
 6D49	shi1
 6D4A	zhuo2
 6D4B	ce4
 6D4C
-6D4D	kuai4	hui4
-6D4E	ji4
+6D4D	hui4
+6D4E	ji4	ji3
 6D4F	liu2
 6D50	chan3
 6D51	hun2
@@ -8093,7 +8095,7 @@ pinyin_data = [here|
 6D75	tong2
 6D76	lao2
 6D77	hai3
-6D78	jin4	jin1
+6D78	jin4
 6D79	jia2	jia1
 6D7A	chong1
 6D7B	weng3
@@ -8113,7 +8115,7 @@ pinyin_data = [here|
 6D89	she4
 6D8A	nian3
 6D8B	tu1
-6D8C	yong3	chong1
+6D8C	yong3
 6D8D	xiao1
 6D8E	xian2
 6D8F	ting3
@@ -8151,13 +8153,13 @@ pinyin_data = [here|
 6DAF	ya2
 6DB0	chuo4
 6DB1	zhang4
-6DB2	ye4	yi4
+6DB2	ye4
 6DB3	kong1
 6DB4	wan3
 6DB5	han2
 6DB6	tuo1
 6DB7	dong1
-6DB8	he2	hao4
+6DB8	he2
 6DB9	wo1
 6DBA	ju1
 6DBB	gan4
@@ -8171,7 +8173,7 @@ pinyin_data = [here|
 6DC3	juan4
 6DC4	zi1
 6DC5	xi1
-6DC6	yao2	xiao2
+6DC6	xiao2
 6DC7	qi2
 6DC8	gu3
 6DC9	guo3
@@ -8182,7 +8184,7 @@ pinyin_data = [here|
 6DCE	peng3
 6DCF	hao4
 6DD0	chang1
-6DD1	shu2	shu1
+6DD1	shu1
 6DD2	qi1
 6DD3	fang1
 6DD4	chi4
@@ -8220,9 +8222,9 @@ pinyin_data = [here|
 6DF4	hu1
 6DF5	yuan1
 6DF6	lai2
-6DF7	hun3	hun2	hun4
+6DF7	hun2	hun4
 6DF8	qing1
-6DF9	yan1	yan4
+6DF9	yan1
 6DFA	qian3	jian1
 6DFB	tian1
 6DFC	miao3
@@ -8333,12 +8335,12 @@ pinyin_data = [here|
 6E65	tu2
 6E66	sheng1
 6E67	yong3	chong1
-6E68	qu4
+6E68	ju2
 6E69	zhong4
-6E6A	suei4
-6E6B	jia3	jiao3	qiu1
+6E6A
+6E6B	qiu1
 6E6C	jiao3
-6E6D	qiou2
+6E6D
 6E6E	yin1	yan1
 6E6F	tang1	shang1
 6E70	long2
@@ -8362,7 +8364,7 @@ pinyin_data = [here|
 6E82	la4
 6E83	kui4	hui4
 6E84
-6E85	jian4	jian1
+6E85	jian4
 6E86	xu4
 6E87	lou2
 6E88	gui1
@@ -8406,17 +8408,17 @@ pinyin_data = [here|
 6EAE	shi1
 6EAF	su4
 6EB0	yi1
-6EB1	zhen1	qin2
+6EB1	zhen1
 6EB2	sou1
 6EB3	yun2
-6EB4	xiu4	chou4
+6EB4	xiu4
 6EB5	yin1
 6EB6	rong2
 6EB7	hun4
 6EB8	su4
 6EB9	su4
-6EBA	ni4	niao4
-6EBB	ta1
+6EBA	ni4
+6EBB	ta4
 6EBC	shi1
 6EBD	ru4
 6EBE	wei1
@@ -8424,7 +8426,7 @@ pinyin_data = [here|
 6EC0	chu4
 6EC1	chu2
 6EC2	pang1
-6EC3	weng3
+6EC3	weng1
 6EC4	cang1
 6EC5	mie4
 6EC6	he2
@@ -8434,7 +8436,7 @@ pinyin_data = [here|
 6ECA	xi4
 6ECB	zi1
 6ECC	di2
-6ECD	zhi3
+6ECD	zhi4
 6ECE	ying2	xing2
 6ECF	fu3
 6ED0	jie2
@@ -8464,7 +8466,7 @@ pinyin_data = [here|
 6EE8	bin1
 6EE9	tan1
 6EEA	yu4
-6EEB	xiu1	xiu3
+6EEB	xiu3
 6EEC	hu4
 6EED	bi4
 6EEE	biao1
@@ -8491,7 +8493,7 @@ pinyin_data = [here|
 6F03	ji2
 6F04	ya2
 6F05	jiao3
-6F06	qi1	qu4
+6F06	qi1
 6F07	xi3
 6F08	ji4
 6F09	lu4
@@ -8526,13 +8528,13 @@ pinyin_data = [here|
 6F26	li2
 6F27	qian2
 6F28	feng2
-6F29	xuan2	xuan4
+6F29	xuan2
 6F2A	yi1
-6F2B	man4	man2
+6F2B	man4
 6F2C	zi4
 6F2D	mang3
 6F2E	kang1
-6F2F	lei3	luo4	ta4
+6F2F	luo4	ta4
 6F30	peng1
 6F31	shu4
 6F32	zhang3	zhang4
@@ -8564,7 +8566,7 @@ pinyin_data = [here|
 6F4C	zhi4
 6F4D	wei2
 6F4E	pi4
-6F4F	jue2
+6F4F	yu4
 6F50	jiao4
 6F51	po1
 6F52	xiang4
@@ -8587,7 +8589,7 @@ pinyin_data = [here|
 6F63	min3
 6F64	run4
 6F65	su4
-6F66	liao2	lao3	liao3
+6F66	liao3
 6F67	zhen1
 6F68	zhong1
 6F69	yi4
@@ -8598,7 +8600,7 @@ pinyin_data = [here|
 6F6E	chao2
 6F6F	xun2
 6F70	kui4	hui4
-6F71	yie
+6F71
 6F72	shao4
 6F73	tu2
 6F74	zhu1
@@ -8610,7 +8612,7 @@ pinyin_data = [here|
 6F7A	chan2
 6F7B	shu3
 6F7C	tong2
-6F7D	pu3
+6F7D	pu1
 6F7E	lin2
 6F7F	wei2
 6F80	se4
@@ -8627,7 +8629,7 @@ pinyin_data = [here|
 6F8B	heng4
 6F8C	si1
 6F8D	shu4
-6F8E	peng2	peng1
+6F8E	peng2
 6F8F	han4
 6F90	yun2
 6F91	liu4	liu1
@@ -8640,7 +8642,7 @@ pinyin_data = [here|
 6F98	shan1
 6F99	xi4
 6F9A	ao4
-6F9B
+6F9B	lu3
 6F9C	lan2
 6F9D
 6F9E	yu2
@@ -8670,7 +8672,7 @@ pinyin_data = [here|
 6FB6	chan2
 6FB7	man4
 6FB8	dan3
-6FB9	dan4
+6FB9	dan4	tan2
 6FBA	yi4
 6FBB	sui4
 6FBC	pi4
@@ -8701,7 +8703,7 @@ pinyin_data = [here|
 6FD5	shi1
 6FD6	shu4
 6FD7	mi4
-6FD8	ning4	neng4
+6FD8	ning4
 6FD9	ying2
 6FDA	ying2	xing2
 6FDB	meng2
@@ -8758,7 +8760,7 @@ pinyin_data = [here|
 700E	mie4
 700F	liu2
 7010	jian1
-7011	pu4	bao4
+7011	pu4
 7012	se4
 7013	cheng2
 7014	gu3
@@ -8849,14 +8851,14 @@ pinyin_data = [here|
 7069	yan4
 706A	yu4
 706B	huo3
-706C	huo3
+706C	biao1
 706D	mie4
 706E	guang1
 706F	deng1
 7070	hui1
 7071	xiao1
 7072	xiao1
-7073	hu11
+7073
 7074	hong2
 7075	ling2
 7076	zao4
@@ -8874,12 +8876,12 @@ pinyin_data = [here|
 7082	zhong1
 7083	fen2
 7084	niu3
-7085	jiong3	gui4
+7085	gui4
 7086	wen2
 7087	po4
 7088	yi4
 7089	lu2
-708A	chui1	chui4
+708A	chui1
 708B	pi1
 708C	kai4
 708D	pan4
@@ -8926,7 +8928,7 @@ pinyin_data = [here|
 70B6	han1
 70B7	zhu4
 70B8	zha4	zha2
-70B9	dian3
+70B9	dian3	dian5
 70BA	wei4	wei2
 70BB	shi2
 70BC	lian4
@@ -8964,7 +8966,7 @@ pinyin_data = [here|
 70DC	xuan3
 70DD	zheng1
 70DE	po4
-70DF	yan1	yin1
+70DF	yan1
 70E0	hui3
 70E1	guang1
 70E2	zhe4
@@ -8998,7 +9000,7 @@ pinyin_data = [here|
 70FE	chi4
 70FF	rong2
 7100	hu2
-7101	xi
+7101
 7102	shu2
 7103	lang3
 7104	xun1
@@ -9009,7 +9011,7 @@ pinyin_data = [here|
 7109	yan1
 710A	han4
 710B	zhuang4
-710C	qu1
+710C	qu1	jun4
 710D	di4	ti1
 710E	xie4
 710F	qi4
@@ -9044,7 +9046,7 @@ pinyin_data = [here|
 712C	xi2
 712D	qiong2
 712E	xin4
-712F	zhuo1
+712F	zhuo2
 7130	yan4
 7131	yan4
 7132	yi4
@@ -9099,7 +9101,7 @@ pinyin_data = [here|
 7163	rou3
 7164	mei2
 7165	huan4
-7166	xu3	xu4
+7166	xu4
 7167	zhao4
 7168	wei1
 7169	fan2
@@ -9108,10 +9110,10 @@ pinyin_data = [here|
 716C	yang2	yang4
 716D	lie4
 716E	zhu3
-716F	jie
+716F
 7170	gao4
 7171	gua1
-7172	bao4	bao1
+7172	bao1
 7173	hu2
 7174	yun1
 7175	xia1
@@ -9123,22 +9125,22 @@ pinyin_data = [here|
 717B	tang2
 717C	chao3
 717D	shan1
-717E	n
+717E	yun1
 717F	bo2
 7180	huang3
 7181	xie2
 7182	xi4
 7183	wu4
-7184	xi2	xi1
+7184	xi1
 7185	yun2
 7186	he2
 7187	he4
 7188	xi1
-7189	yun2
+7189	yun1
 718A	xiong2
 718B	nai2
 718C	kao3
-718D	qiong
+718D
 718E	yao4
 718F	xun1	xun4
 7190	ming2
@@ -9149,20 +9151,20 @@ pinyin_data = [here|
 7195
 7196
 7197	qiang4
-7198	liu1
+7198	liu4
 7199	xi1
 719A	bi4
 719B	biao1
-719C	zong3	cong1
+719C	cong1
 719D	lu4
 719E	jian1
-719F	shou2	shu2
+719F	shu2
 71A0	yi4
 71A1	lou2
 71A2	feng1
 71A3	sui1
 71A4	yi4
-71A5	tong1
+71A5	teng1
 71A6	jue2
 71A7	zong1
 71A8	yun4	yu4
@@ -9178,7 +9180,7 @@ pinyin_data = [here|
 71B2	jiong3
 71B3	man4
 71B4
-71B5	shang1	di1
+71B5	shang1
 71B6	cuan4
 71B7	zeng1
 71B8	jian1
@@ -9203,7 +9205,7 @@ pinyin_data = [here|
 71CB	jiao1
 71CC	fen2
 71CD	si1
-71CE	liao4	liao2	liao3
+71CE	liao2	liao3
 71CF	yu4
 71D0	lin2
 71D1	tong2
@@ -9262,7 +9264,7 @@ pinyin_data = [here|
 7206	bao4
 7207	ruo4
 7208	di4
-7209	ly4
+7209	lu:4
 720A	ao2
 720B	xun4
 720C	kuang4
@@ -9316,9 +9318,9 @@ pinyin_data = [here|
 723C	zu3
 723D	shuang3
 723E	er3
-723F	qiang2	pan2
+723F	pan2
 7240	chuan2
-7241	ge1
+7241	ke1
 7242	zang1
 7243	zang1
 7244	qiang1
@@ -9399,7 +9401,7 @@ pinyin_data = [here|
 728F	pian1
 7290	ke1
 7291	ju2
-7292	kao4	di2
+7292	kao4
 7293	chu2
 7294	xi4
 7295	bei4
@@ -9433,7 +9435,7 @@ pinyin_data = [here|
 72B1	bo2
 72B2	chai2
 72B3	chuo2
-72B4	an4	han4
+72B4	an4
 72B5	jie2
 72B6	zhuang4
 72B7	guang3
@@ -9478,7 +9480,7 @@ pinyin_data = [here|
 72DE	ning2
 72DF	huan2
 72E0	hen3
-72E1	jiao3	jia3
+72E1	jiao3
 72E2	he2	hao2	mo4
 72E3	zhao4
 72E4	ji2
@@ -9513,8 +9515,8 @@ pinyin_data = [here|
 7301	li4
 7302	zhi4
 7303	xian3
-7304	han4
-7305	jing1
+7304	jing1
+7305	han4
 7306	fei3
 7307	yao2
 7308	ba4	pi2
@@ -9539,11 +9541,11 @@ pinyin_data = [here|
 731B	meng3
 731C	cai1
 731D	cu4
-731E	she4	she1
+731E	she1
 731F	lie4
 7320
 7321	luo2
-7322	hu2	hu1
+7322	hu2
 7323	zong1
 7324	hu2
 7325	wei3
@@ -9552,7 +9554,7 @@ pinyin_data = [here|
 7328	yuan2
 7329	xing1
 732A	zhu1
-732B	mao1	mao2
+732B	mao1
 732C	wei4
 732D	yuan2
 732E	xian4
@@ -9625,7 +9627,7 @@ pinyin_data = [here|
 7371	bian1
 7372	huo4
 7373	nou2
-7374	meng2
+7374	meng3
 7375	lie4
 7376	nao2
 7377	guang3
@@ -9644,11 +9646,11 @@ pinyin_data = [here|
 7384	xuan2
 7385	miao4
 7386	zi1
-7387	lu:4	shuai4	shuo4
+7387	lu:4	shuai4
 7388	lu2
 7389	yu4
 738A	su4
-738B	wang2	wang4
+738B	wang2
 738C	qiu2
 738D	ga3
 738E	ding1
@@ -9663,14 +9665,14 @@ pinyin_data = [here|
 7397	yu2
 7398	qi3
 7399	yu2
-739A	yang2
+739A	yang2	chang4
 739B	ma3
 739C	hong2
 739D	wu3
 739E	fu1
 739F	wen2	min2
 73A0	jie4
-73A1	ya4
+73A1	ya2
 73A2	bin1	fen1
 73A3	bian4
 73A4	beng3
@@ -9678,7 +9680,7 @@ pinyin_data = [here|
 73A6	jue2
 73A7	yun3
 73A8	jue2
-73A9	wan2	wan4
+73A9	wan2
 73AA	jian1
 73AB	mei2
 73AC	dan3
@@ -9717,7 +9719,7 @@ pinyin_data = [here|
 73CD	zhen1
 73CE	zhen1
 73CF	jue2
-73D0	fa4
+73D0	fa3
 73D1	long2
 73D2	jin1
 73D3	jiao4
@@ -9742,7 +9744,7 @@ pinyin_data = [here|
 73E6	xiang2
 73E7	yao2
 73E8	xia2
-73E9	heng2	hang2
+73E9	heng2
 73EA	gui1
 73EB	chong1
 73EC	xu4
@@ -9751,7 +9753,7 @@ pinyin_data = [here|
 73EF
 73F0	dang1
 73F1	ying1
-73F2	hun2	hui1
+73F2	hun2
 73F3	wen2
 73F4	e2
 73F5	cheng2
@@ -9819,7 +9821,7 @@ pinyin_data = [here|
 7433	lin2
 7434	qin2
 7435	pi2
-7436	pa2	ba5
+7436	pa2
 7437	qiang1
 7438	zhuo2
 7439	qin2
@@ -9833,7 +9835,7 @@ pinyin_data = [here|
 7441	mao4
 7442	mei2
 7443	chun1
-7444	xuan1	xuan3
+7444	xuan1
 7445	ti2
 7446	xing1
 7447	dai4
@@ -9862,7 +9864,7 @@ pinyin_data = [here|
 745E	rui4
 745F	se4
 7460	liu2
-7461	shi
+7461
 7462	rong2
 7463	suo3
 7464	yao2
@@ -9912,7 +9914,7 @@ pinyin_data = [here|
 7490	lu4
 7491	wu2
 7492	deng1
-7493	xiou4
+7493
 7494	zeng1
 7495	xun2
 7496	qu2
@@ -9998,7 +10000,7 @@ pinyin_data = [here|
 74E6	wa3	wa4
 74E7
 74E8	jiang1	hong2
-74E9	qian2wa3
+74E9	qian2	wa3
 74EA	ban3
 74EB	pen2
 74EC	fang3
@@ -10020,7 +10022,7 @@ pinyin_data = [here|
 74FC
 74FD	dang4
 74FE	meng3
-74FF	pou3	bu4
+74FF	bu4
 7500	chui2
 7501	ping2
 7502	bian1
@@ -10036,7 +10038,7 @@ pinyin_data = [here|
 750C	ou1
 750D	meng2
 750E	zhuan1
-750F	bang4
+750F	beng4
 7510	lin2
 7511	zeng4
 7512	wu3
@@ -10047,7 +10049,7 @@ pinyin_data = [here|
 7517	yan3
 7518	gan1
 7519	dai4
-751A	shen2	she2	shen4
+751A	shen4
 751B	tian2
 751C	tian2
 751D	han1
@@ -10067,7 +10069,7 @@ pinyin_data = [here|
 752B	fu3
 752C	yong3
 752D	beng2
-752E	fong4
+752E
 752F	ning2
 7530	tian2
 7531	you2
@@ -10079,11 +10081,11 @@ pinyin_data = [here|
 7537	nan2
 7538	dian4
 7539	ping2
-753A	ting3	ding1
+753A	ding1
 753B	hua4
 753C	ting3	ding1
 753D	quan3
-753E	zi1	zai1
+753E	zai1
 753F	meng2
 7540	bi4
 7541	qi2
@@ -10202,7 +10204,7 @@ pinyin_data = [here|
 75B2	pi2
 75B3	gan1
 75B4	ke1
-75B5	ci1	ci2
+75B5	ci1
 75B6	xie4
 75B7	qi2
 75B8	dan3	da5
@@ -10216,8 +10218,8 @@ pinyin_data = [here|
 75C0	ju1
 75C1	dian4
 75C2	jia1
-75C3	xuan2
-75C4	chi2	zha4
+75C3	xian2
+75C4	zha4
 75C5	bing4
 75C6	nie4
 75C7	zheng4	zheng1
@@ -10273,16 +10275,16 @@ pinyin_data = [here|
 75F9	bi4
 75FA	bi4
 75FB	min2
-75FC	gu1	gu4
+75FC	gu4
 75FD	dui1
 75FE	e1
 75FF	wei3
 7600	yu1
 7601	cui4
 7602	ya3
-7603	zhu3	zhu2
+7603	zhu2
 7604	xi1
-7605	dan4	dan1	dan3
+7605	dan4	dan1
 7606	shen4
 7607	zhong3
 7608	ji4	zhi4
@@ -10298,7 +10300,7 @@ pinyin_data = [here|
 7612	wen2
 7613	huan4
 7614	ku4
-7615	xia2
+7615	jia3
 7616	yin1
 7617	yi4
 7618	lou4
@@ -10318,7 +10320,7 @@ pinyin_data = [here|
 7626	shou4
 7627	nu:e4	yao4
 7628	dian1
-7629	da2
+7629	da2	da5
 762A	bie1	bie3
 762B	tan1
 762C	zhang4
@@ -10353,7 +10355,7 @@ pinyin_data = [here|
 7649	dan4	dan1	dan3
 764A	yin4
 764B	he4
-764C	yan2	ai2
+764C	ai2
 764D	ban1
 764E	xian2
 764F	guan1
@@ -10427,7 +10429,7 @@ pinyin_data = [here|
 7693	hao4
 7694	han4
 7695	bi4
-7696	wan3	huan3
+7696	wan3
 7697	chou2
 7698	qian4
 7699	xi1
@@ -10491,7 +10493,7 @@ pinyin_data = [here|
 76D3	yu1
 76D4	kui1
 76D5	fan4
-76D6	ge3
+76D6	ge3	gai4
 76D7	dao4
 76D8	pan2
 76D9	fu3
@@ -10500,7 +10502,7 @@ pinyin_data = [here|
 76DC	dao4
 76DD	lu4
 76DE	zhan3
-76DF	meng2	ming2
+76DF	meng2
 76E0	lu4
 76E1	jin4	jin3
 76E2	xu4
@@ -10526,12 +10528,12 @@ pinyin_data = [here|
 76F6	wan3
 76F7	tian2
 76F8	xiang1	xiang4
-76F9	dun4	dun3
+76F9	dun3
 76FA	xin1
 76FB	xi1
 76FC	pan4
 76FD	feng1
-76FE	dun4	shun3
+76FE	dun4
 76FF	min2
 7700	ming2
 7701	sheng3	xing3
@@ -10580,7 +10582,7 @@ pinyin_data = [here|
 772C	long2
 772D	sui1
 772E	tong2
-772F	mi3	mi1
+772F	mi1	mi2
 7730	die2
 7731	yi2
 7732	er4
@@ -10623,7 +10625,7 @@ pinyin_data = [here|
 7757	shi4
 7758	qiong2
 7759	lie4
-775A	ai2	ya2
+775A	ya2
 775B	jing1
 775C	zheng1
 775D	li2
@@ -10650,7 +10652,7 @@ pinyin_data = [here|
 7772	xing3
 7773	hui1
 7774	gun4
-7775	cai
+7775
 7776	chun3
 7777	jian1
 7778	mei4
@@ -10700,13 +10702,13 @@ pinyin_data = [here|
 77A4	run2
 77A5	pie1
 77A6	xi1
-77A7	qiao2	ya3
+77A7	qiao2
 77A8	pu1
 77A9	zhu3
 77AA	deng4
 77AB	shen3
 77AC	shun4
-77AD	liao3	liao4
+77AD	liao4
 77AE	che4
 77AF	xian2
 77B0	kan4
@@ -10724,7 +10726,7 @@ pinyin_data = [here|
 77BC	jian3
 77BD	gu3
 77BE	zhao4
-77BF	qu1	ju4	qu2
+77BF	ju4	qu2
 77C0	wei2
 77C1	chou3
 77C2	ji4
@@ -10753,7 +10755,7 @@ pinyin_data = [here|
 77D9	kan4
 77DA	zhu3
 77DB	mao2
-77DC	jin1	guan1	qin2
+77DC	jin1	qin2
 77DD	lin2
 77DE	yu4
 77DF	shuo4
@@ -10762,13 +10764,13 @@ pinyin_data = [here|
 77E2	shi3
 77E3	yi3
 77E4	shen3
-77E5	zhi1	zhi4
+77E5	zhi1
 77E6	hou2	hou4
 77E7	shen3
 77E8	ying3
-77E9	ju3
+77E9	ju3	ju5
 77EA	zhou1
-77EB	jiao3	jia3	jiao2
+77EB	jiao3
 77EC	cuo2
 77ED	duan3
 77EE	ai3
@@ -10784,7 +10786,7 @@ pinyin_data = [here|
 77F8	gan1
 77F9	wu4
 77FA	tuo1
-77FB	ku4	ku1
+77FB	ku1
 77FC	qiang1
 77FD	xi1
 77FE	fan2
@@ -10798,10 +10800,10 @@ pinyin_data = [here|
 7806	fu1
 7807	min2
 7808	nuo3
-7809	hua1	xu1
+7809	hua1
 780A	kang4
 780B	zhi3
-780C	qi4	qie4
+780C	qi4
 780D	kan3
 780E	jie4
 780F	fen1
@@ -10809,7 +10811,7 @@ pinyin_data = [here|
 7811	ya4
 7812	pi1
 7813	zhe2
-7814	yan2	yan4
+7814	yan2
 7815	sui4
 7816	zhuan1
 7817	che1
@@ -10818,9 +10820,9 @@ pinyin_data = [here|
 781A	yan4
 781B
 781C	feng1
-781D	fa2	fa3
+781D	fa3
 781E	mo4
-781F	zha4	zha3	zuo2
+781F	zha3	zuo4
 7820	qu1
 7821	yu4
 7822	ke1
@@ -10869,7 +10871,7 @@ pinyin_data = [here|
 784D	ken4
 784E	xing2
 784F	yan2
-7850	tong2	dong3
+7850	dong4
 7851	peng1
 7852	xi1
 7853
@@ -10892,7 +10894,7 @@ pinyin_data = [here|
 7864	xia2
 7865	mang3
 7866	long4
-7867	iong3
+7867
 7868	che1
 7869	che4
 786A	wo4
@@ -10909,7 +10911,7 @@ pinyin_data = [here|
 7875	lu3
 7876	chen3
 7877	jian3
-7878	nue4
+7878
 7879	song1
 787A	zhuo2
 787B	keng1
@@ -10929,7 +10931,7 @@ pinyin_data = [here|
 7889	diao1
 788A	jian1
 788B	he4
-788C	liu4
+788C	liu4	lu4
 788D	ai4
 788E	sui4
 788F	que4
@@ -10943,14 +10945,14 @@ pinyin_data = [here|
 7897	wan3
 7898	dian3
 7899	gang1
-789A	pei2
+789A	bei4
 789B	qi4
 789C	chen3
 789D	ruan3
 789E	yan2
 789F	die2
 78A0	ding4
-78A1	du2	zhou2
+78A1	zhou5
 78A2	tuo2
 78A3	jie2
 78A4	ying1
@@ -10969,7 +10971,7 @@ pinyin_data = [here|
 78B1	jian3
 78B2	di4
 78B3	tan4
-78B4	cha2	cha1
+78B4	cha2
 78B5
 78B6	qi4
 78B7
@@ -10986,7 +10988,7 @@ pinyin_data = [here|
 78C2	liu4
 78C3	si1
 78C4	tang2
-78C5	bang4	pang1	pang2
+78C5	bang4	pang2
 78C6	hua2
 78C7	pi1
 78C8	wei3
@@ -11057,7 +11059,7 @@ pinyin_data = [here|
 7909	he2
 790A	huo4
 790B	zhai2
-790C	lei3
+790C	lei2
 790D	ke3
 790E	chu3
 790F	ji2
@@ -11154,12 +11156,12 @@ pinyin_data = [here|
 796A	gui3
 796B	xia2
 796C	zhi1
-796D	ji4	zhai4
+796D	ji4
 796E	gao4
 796F	zhen1
 7970	gao4
 7971	shui4
-7972	jin1	jin4
+7972	jin4
 7973	zhen3
 7974	gai1	jie4
 7975	kun3
@@ -11212,7 +11214,7 @@ pinyin_data = [here|
 79A4	xuan1
 79A5	qi2
 79A6	yu4
-79A7	xi1
+79A7	xi3
 79A8	ji1
 79A9	si4
 79AA	chan2	shan4
@@ -11224,15 +11226,15 @@ pinyin_data = [here|
 79B0	ni3	mi2
 79B1	dao3
 79B2	li4
-79B3	rang2	rang3
+79B3	rang2
 79B4	yue4
 79B5	ti2
 79B6	zan3
 79B7	lei4
 79B8	rou2
 79B9	yu3
-79BA	yu2	yu4
-79BB	chi1	li2
+79BA	yu2
+79BB	li2
 79BC	xie4
 79BD	qin2
 79BE	he2
@@ -11261,7 +11263,7 @@ pinyin_data = [here|
 79D5	bi3
 79D6	zhi1
 79D7	yu4
-79D8	mi4	bi4	lin2
+79D8	mi4	bi4
 79D9	ku4
 79DA	ban4
 79DB	pi1
@@ -11273,7 +11275,7 @@ pinyin_data = [here|
 79E1	ba2
 79E2	ling2
 79E3	mo4
-79E4	cheng4	chen4	cheng1
+79E4	cheng4
 79E5	nian2
 79E6	qin2
 79E7	yang1
@@ -11285,7 +11287,7 @@ pinyin_data = [here|
 79ED	zi3
 79EE	tai2
 79EF	ji1
-79F0	cheng1	chen4	cheng4
+79F0	cheng1	chen4
 79F1	tong2
 79F2	zhi4
 79F3	huo2
@@ -11304,7 +11306,7 @@ pinyin_data = [here|
 7A00	xi1
 7A01	kao3
 7A02	lang2
-7A03	fu1	fu2
+7A03	fu1
 7A04	ze4
 7A05	shui4
 7A06	lu:3
@@ -11324,7 +11326,7 @@ pinyin_data = [here|
 7A14	ren3
 7A15	zhun4
 7A16	bang4
-7A17	bai4	bi4
+7A17	bai4
 7A18	ji1	qi2
 7A19	zhi2
 7A1A	zhi4
@@ -11337,7 +11339,7 @@ pinyin_data = [here|
 7A21	zui4
 7A22	yu4
 7A23	su1
-7A24	l«¦4
+7A24
 7A25
 7A26	yi1
 7A27	xi4
@@ -11353,7 +11355,7 @@ pinyin_data = [here|
 7A31	cheng1	chen4	cheng4
 7A32	dao4
 7A33	wen3
-7A34	xian2
+7A34	lian2
 7A35	zi1
 7A36	yu4
 7A37	ji4
@@ -11403,7 +11405,7 @@ pinyin_data = [here|
 7A63	rang2
 7A64	nuo4
 7A65	yu4
-7A66	bin
+7A66
 7A67	ji4
 7A68	tui2
 7A69	wen3
@@ -11417,12 +11419,12 @@ pinyin_data = [here|
 7A71	jue2
 7A72	li2
 7A73	zan4
-7A74	xue4	xue2
+7A74	xue2
 7A75	wa1
-7A76	jiu4	jiu1
+7A76	jiu1
 7A77	qiong2
 7A78	xi1
-7A79	qiong1	qiong2
+7A79	qiong2
 7A7A	kong1	kong4
 7A7B	yu1
 7A7C	sen1
@@ -11430,10 +11432,10 @@ pinyin_data = [here|
 7A7E	yao4
 7A7F	chuan1
 7A80	zhun1
-7A81	tu2	tu1
+7A81	tu1
 7A82	lao2
 7A83	qie4
-7A84	zhai3	ze2
+7A84	zhai3
 7A85	yao3
 7A86	bian3
 7A87	bao2
@@ -11453,7 +11455,7 @@ pinyin_data = [here|
 7A95	tiao3
 7A96	jiao4
 7A97	chuang1
-7A98	jiong3	jun3
+7A98	jiong3
 7A99	xiao1
 7A9A	cheng2
 7A9B	kou4
@@ -11464,12 +11466,12 @@ pinyin_data = [here|
 7AA0	ke1
 7AA1	zhui4
 7AA2	xu4
-7AA3	cu4	su1
-7AA4	guan
+7AA3	su1
+7AA4
 7AA5	kui1
 7AA6	dou4
 7AA7
-7AA8	yin4
+7AA8	yin4	xun1
 7AA9	wo1
 7AAA	wa1
 7AAB	ya4
@@ -11506,15 +11508,15 @@ pinyin_data = [here|
 7ACA	qie4
 7ACB	li4
 7ACC	chu4
-7ACD	shi2gong1sheng1
+7ACD	shi2	gong1	sheng1
 7ACE	fu4
-7ACF	qian1gong1sheng1
+7ACF	qian1	gong1	sheng1
 7AD0	chu4
 7AD1	hong2
 7AD2	qi2	ji1
-7AD3	qian1fen1zhi1yi1gong1sheng1
-7AD4	gong1sheng1
-7AD5	shi2fen1zhi1yi1gong1sheng1
+7AD3	qian1	fen1	zhi1	yi1	gong1	sheng1
+7AD4	gong1	sheng1
+7AD5	shi2	fen1	zhi1	yi1	gong1	sheng1
 7AD6	shu4
 7AD7	miao4
 7AD8	ju3
@@ -11526,7 +11528,7 @@ pinyin_data = [here|
 7ADE	jing4
 7ADF	jing4
 7AE0	zhang1
-7AE1	yi1gong1sheng1deyi1bai3bei4
+7AE1	yi1	gong1	sheng1	bai3	bei4
 7AE2	si4	qi2
 7AE3	jun4
 7AE4	hong2
@@ -11600,10 +11602,10 @@ pinyin_data = [here|
 7B28	ben4
 7B29	fa2
 7B2A	da2
-7B2B	zi3	yi2
+7B2B	zi3
 7B2C	di4
 7B2D	ling2
-7B2E	ze2	zuo2
+7B2E	ze2
 7B2F	nu2
 7B30	fu2
 7B31	gou3
@@ -11638,7 +11640,7 @@ pinyin_data = [here|
 7B4E	ru2
 7B4F	fa2
 7B50	kuang1
-7B51	zhu2	zhu4
+7B51	zhu4
 7B52	tong3
 7B53	ji1
 7B54	da2	da1
@@ -11706,7 +11708,7 @@ pinyin_data = [here|
 7B92	zhou3
 7B93	lu4
 7B94	bo2
-7B95	ji1
+7B95	ji1	ji5
 7B96	lin2
 7B97	suan4
 7B98	jun4
@@ -11731,7 +11733,7 @@ pinyin_data = [here|
 7BAB	xiao1
 7BAC	ruo4
 7BAD	jian4
-7BAE	xuan
+7BAE
 7BAF	bian1
 7BB0	sun3
 7BB1	xiang1
@@ -11822,7 +11824,7 @@ pinyin_data = [here|
 7C06	kou4
 7C07	cu4
 7C08	ping2
-7C09	chou4	zao4
+7C09	zao4
 7C0A	ji1
 7C0B	gui3
 7C0C	su4
@@ -11965,7 +11967,7 @@ pinyin_data = [here|
 7C95	po4
 7C96	mo4
 7C97	cu1
-7C98	nian2	zhan1
+7C98	zhan1
 7C99	zhou4
 7C9A	li2
 7C9B	su4
@@ -11978,21 +11980,21 @@ pinyin_data = [here|
 7CA2	zi1	ci2
 7CA3	ce4
 7CA4	yue4
-7CA5	zhou1	yu4
+7CA5	zhou1
 7CA6	lin2
 7CA7	zhuang1
 7CA8	bai3
 7CA9
 7CAA	fen4
 7CAB	mian4
-7CAC
+7CAC	qu1
 7CAD
 7CAE	liang2
 7CAF	xian4
 7CB0	fu1
 7CB1	liang2
 7CB2	can4
-7CB3	geng1	jing1
+7CB3	jing1
 7CB4	li3
 7CB5	yue4
 7CB6	lu4
@@ -12006,18 +12008,18 @@ pinyin_data = [here|
 7CBE	jing1
 7CBF	guo3
 7CC0
-7CC1	san3	shen1
+7CC1	san3
 7CC2	san3	shen1
 7CC3	tang2
 7CC4	bian3
-7CC5	rou3	rou2
+7CC5	rou2
 7CC6	mian4
 7CC7	hou2
-7CC8	xu3	xu1
+7CC8	xu3
 7CC9	zong4
 7CCA	hu2	hu1	hu4
 7CCB	jian4
-7CCC	zan2	zan1
+7CCC	zan1
 7CCD	ci2
 7CCE	li2
 7CCF	xie4
@@ -12030,10 +12032,10 @@ pinyin_data = [here|
 7CD6	tang2
 7CD7	qiu3
 7CD8
-7CD9	cao1	cao4
+7CD9	cao1
 7CDA	zhuang1
 7CDB	tang2
-7CDC	mi2	mei2
+7CDC	mi2
 7CDD	san3	shen1
 7CDE	fen4
 7CDF	zao1
@@ -12079,7 +12081,7 @@ pinyin_data = [here|
 7D07	he2	ge1
 7D08	wan2
 7D09	ren4
-7D0A	wen4	wen3
+7D0A	wen3
 7D0B	wen2	wen4
 7D0C	qiu2
 7D0D	na4
@@ -12243,7 +12245,7 @@ pinyin_data = [here|
 7DAB	xian4
 7DAC	shou4
 7DAD	wei2
-7DAE	qi3	qing4
+7DAE	qi3	qing3
 7DAF	tao2
 7DB0	wan3
 7DB1	gang1
@@ -12280,7 +12282,7 @@ pinyin_data = [here|
 7DD0	fan2
 7DD1	lu:4
 7DD2	xu4
-7DD3	yingl
+7DD3
 7DD4	shang4
 7DD5
 7DD6	xu4
@@ -12480,22 +12482,22 @@ pinyin_data = [here|
 7E98	zuan3
 7E99	luo4
 7E9A	xi3
-7E9B	dao4	du2
+7E9B	dao4
 7E9C	lan4	lan3
 7E9D	lei2
 7E9E	lian4
 7E9F	mi4
 7EA0	jiu1
 7EA1	yu1
-7EA2	hong2	gong1
+7EA2	hong2
 7EA3	zhou4
-7EA4	xian1
+7EA4	xian1	qian4
 7EA5	he2	ge1
-7EA6	yue1	yao1
+7EA6	yue1
 7EA7	ji2
 7EA8	wan2
 7EA9	kuang4
-7EAA	ji4
+7EAA	ji4	ji3
 7EAB	ren4
 7EAC	wei3
 7EAD	yun2
@@ -12510,7 +12512,7 @@ pinyin_data = [here|
 7EB6	lun2	guan1
 7EB7	fen1
 7EB8	zhi3
-7EB9	wen2	wen4
+7EB9	wen2
 7EBA	fang3
 7EBB	zhu4
 7EBC	zhen4
@@ -12538,16 +12540,16 @@ pinyin_data = [here|
 7ED2	rong2
 7ED3	jie2	jie1
 7ED4	ku4
-7ED5	rao4	rao3
+7ED5	rao4
 7ED6	die2
 7ED7	hang2
 7ED8	hui4
-7ED9	gei3
+7ED9	gei3	ji3
 7EDA	xuan4
 7EDB	jiang4
 7EDC	luo4	lao4
 7EDD	jue2
-7EDE	jiao3	jia3
+7EDE	jiao3
 7EDF	tong3
 7EE0	geng3
 7EE1	xiao1
@@ -12557,15 +12559,15 @@ pinyin_data = [here|
 7EE5	sui2
 7EE6	tao1
 7EE7	ji4
-7EE8	ti2	di4	ti4
-7EE9	ji1
+7EE8	ti2	ti4
+7EE9	ji4
 7EEA	xu4
 7EEB	ling2
 7EEC	yin1
 7EED	xu4
 7EEE	qi3
 7EEF	fei1
-7EF0	chuo4
+7EF0	chuo4	chao1	chuo5
 7EF1	shang4
 7EF2	gun3
 7EF3	sheng2
@@ -12577,10 +12579,10 @@ pinyin_data = [here|
 7EF9	tao2
 7EFA	liu3
 7EFB	quan3
-7EFC	zeng4	zong1
+7EFC	zong1
 7EFD	zhan4
 7EFE	wan3
-7EFF	lu:4
+7EFF	lu:4	lu4
 7F00	zhui4
 7F01	zi1
 7F02	ke4
@@ -12618,7 +12620,7 @@ pinyin_data = [here|
 7F22	yi4
 7F23	jian1
 7F24	bin1
-7F25	piao3	piao1
+7F25	piao1
 7F26	man4
 7F27	lei2
 7F28	ying1
@@ -12628,12 +12630,12 @@ pinyin_data = [here|
 7F2C	xie2
 7F2D	liao2
 7F2E	shan4
-7F2F	zeng1	zeng4
+7F2F	zeng1
 7F30	jiang1
 7F31	qian3
 7F32	qiao1
 7F33	huan2
-7F34	jiao3	jia3	zhuo2
+7F34	jiao3
 7F35	zuan3
 7F36	fou3
 7F37	xie4
@@ -12668,8 +12670,8 @@ pinyin_data = [here|
 7F54	wang3
 7F55	han3
 7F56
-7F57	luo1	luo2
-7F58	fu2	fou2
+7F57	luo2
+7F58	fu2
 7F59	mi2
 7F5A	fa2
 7F5B	gu1
@@ -12679,7 +12681,7 @@ pinyin_data = [here|
 7F5F	gu3
 7F60	min2
 7F61	gang1
-7F62	ba4	ba5
+7F62	ba4
 7F63	gua4
 7F64	ti2
 7F65	juan4
@@ -12742,13 +12744,13 @@ pinyin_data = [here|
 7F9E	xiu1
 7F9F	qiang3
 7FA0	yi2
-7FA1	xian4	yi2
+7FA1	xian4
 7FA2	rong2
 7FA3	qun2
 7FA4	qun2
 7FA5	qian1	qiang3
 7FA6	huan2
-7FA7	zui1	suo1
+7FA7	suo1
 7FA8	xian4
 7FA9	yi4
 7FAA	yang3
@@ -12794,7 +12796,7 @@ pinyin_data = [here|
 7FD2	xi2
 7FD3	xie2
 7FD4	xiang2
-7FD5	xi4	xi1
+7FD5	xi1
 7FD6	xi4
 7FD7	qi2
 7FD8	qiao2	qiao4
@@ -12837,7 +12839,7 @@ pinyin_data = [here|
 7FFD	hui4
 7FFE	xuan1
 7FFF	dao4
-8000	yao4	yue4
+8000	yao4
 8001	lao3
 8002
 8003	kao3
@@ -12878,7 +12880,7 @@ pinyin_data = [here|
 8026	ou3
 8027	lou2
 8028	nou4
-8029	gou1	jiang3
+8029	jiang3
 802A	pang3
 802B	ze2
 802C	lou2
@@ -12890,8 +12892,8 @@ pinyin_data = [here|
 8032	huai2
 8033	er3
 8034	zhe2
-8035	ting1	ding1
-8036	ye2	ye1
+8035	ding1
+8036	ye1
 8037	da1
 8038	song3
 8039	qin2
@@ -12919,7 +12921,7 @@ pinyin_data = [here|
 804F	er2	er4
 8050	ya4
 8051	die2
-8052	gua1	guo1
+8052	guo1
 8053
 8054	lian2
 8055	hao4
@@ -12959,7 +12961,7 @@ pinyin_data = [here|
 8077	zhi2
 8078	dan1
 8079	ning2
-807A	qie
+807A
 807B	ji1
 807C	ting1
 807D	ting1	ting4
@@ -12976,7 +12978,7 @@ pinyin_data = [here|
 8088	zhao4
 8089	rou4
 808A	yi4
-808B	le4	le1	lei4
+808B	lei4
 808C	ji1
 808D	qiu2
 808E	ken3
@@ -12987,7 +12989,7 @@ pinyin_data = [here|
 8093	huang1
 8094	yi3
 8095	ren4
-8096	xiao4	xiao1
+8096	xiao4
 8097	ru3
 8098	zhou3
 8099	yuan1
@@ -13011,11 +13013,11 @@ pinyin_data = [here|
 80AB	zhun1
 80AC	you2
 80AD	na4
-80AE	hang2	ang1
+80AE	ang1
 80AF	ken3
 80B0	ran2
 80B1	gong1
-80B2	yu4
+80B2	yu4	yo1
 80B3	wen3
 80B4	yao2
 80B5	jin4
@@ -13031,7 +13033,7 @@ pinyin_data = [here|
 80BF	zhong3
 80C0	zhang4
 80C1	xie2
-80C2	shen1	shen4
+80C2	shen4
 80C3	wei4
 80C4	zhou4
 80C5	die2
@@ -13057,7 +13059,7 @@ pinyin_data = [here|
 80D9	zuo4
 80DA	pei1
 80DB	jia3
-80DC	sheng4	sheng1
+80DC	sheng4
 80DD	zhi1
 80DE	bao1
 80DF	mu3
@@ -13079,7 +13081,7 @@ pinyin_data = [here|
 80EF	kua4
 80F0	yi2
 80F1	guang1
-80F2	hai3
+80F2	hai3	gai3
 80F3	ge1
 80F4	dong4
 80F5	zhi4
@@ -13087,12 +13089,12 @@ pinyin_data = [here|
 80F7	xiong1
 80F8	xiong1
 80F9	er2
-80FA	e4
+80FA	an4
 80FB	xing2
 80FC	pian2
 80FD	neng2
 80FE	zi4
-80FF	gui
+80FF
 8100	cheng2
 8101	tiao4
 8102	zhi1
@@ -13103,12 +13105,12 @@ pinyin_data = [here|
 8107	xie2
 8108	mo4	mai4
 8109	mai4	mo4
-810A	ji2	ji3
+810A	ji3
 810B	xie2
 810C
 810D	kuai4
 810E	sa4
-810F	zang4
+810F	zang4	zang1
 8110	qi2
 8111	nao3
 8112	mi3
@@ -13117,9 +13119,9 @@ pinyin_data = [here|
 8115	wan3
 8116	bo2
 8117	wen3
-8118	guan3
+8118	wan3
 8119	qiu2
-811A	jiao3	jia3	jue2
+811A	jiao3	jue2
 811B	jing4
 811C	you3
 811D	heng1
@@ -13131,7 +13133,7 @@ pinyin_data = [here|
 8123	chun2
 8124	shen4
 8125	xie2
-8126	de
+8126
 8127	juan1
 8128	cu4
 8129	xiu1
@@ -13167,15 +13169,15 @@ pinyin_data = [here|
 8147	nei3
 8148	jing1
 8149	jie1
-814A	la4	xi1	xi2
-814B	yi4	ye4
-814C	a1	ang1	yan1
+814A	la4
+814B	ye4
+814C	a1	yan1
 814D	ren3
 814E	shen4
 814F	chuo4	duo2
 8150	fu3
 8151	fu3
-8152	ju1	qu2
+8152	ju1
 8153	fei2
 8154	qiang1
 8155	wan4
@@ -13196,7 +13198,7 @@ pinyin_data = [here|
 8164	an1
 8165	xing1
 8166	nao3
-8167	yu2	shu4
+8167	shu4
 8168	shuan4
 8169	nan3
 816A	yun4
@@ -13231,7 +13233,7 @@ pinyin_data = [here|
 8187	zhui4
 8188	ge2
 8189	yi4
-818A	bo2
+818A	bo2	bo5
 818B	liao2
 818C	ji2
 818D	pi2
@@ -13239,7 +13241,7 @@ pinyin_data = [here|
 818F	gao1	gao4
 8190	lu:3
 8191	bin4
-8192	ou
+8192
 8193	chang2
 8194	lu4
 8195	guo2
@@ -13249,7 +13251,7 @@ pinyin_data = [here|
 8199	jiang3
 819A	fu1
 819B	tang2
-819C	mo4	mo2
+819C	mo2
 819D	xi1
 819E	zhuan1
 819F	lu:4
@@ -13259,7 +13261,7 @@ pinyin_data = [here|
 81A3	zhi4
 81A4	xue3
 81A5	chun1
-81A6	lian3	lin4
+81A6	lin4
 81A7	tong2
 81A8	peng2
 81A9	ni4
@@ -13287,7 +13289,7 @@ pinyin_data = [here|
 81BF	nong2
 81C0	tun2
 81C1	lian2
-81C2	bi4	bei4	bei5
+81C2	bi4	bei5
 81C3	yong1
 81C4	jue2
 81C5	chu4
@@ -13302,7 +13304,7 @@ pinyin_data = [here|
 81CE	cui4
 81CF	bin4
 81D0	xun1
-81D1	ru2
+81D1	nao4
 81D2	huo4
 81D3	zang4
 81D4	xian4
@@ -13313,13 +13315,13 @@ pinyin_data = [here|
 81D9	yan1
 81DA	lu2
 81DB	hu4
-81DC	zang1
+81DC	za1
 81DD	luo3
 81DE	qu2
 81DF	zang4
 81E0	luan2
 81E1	ni2
-81E2	zang1
+81E2	za1
 81E3	chen2
 81E4	qian1
 81E5	wo4
@@ -13349,7 +13351,7 @@ pinyin_data = [here|
 81FD	xian4
 81FE	yu2
 81FF	cha2
-8200	yao3	wai3
+8200	yao3
 8201	yu2
 8202	chong1
 8203	xi4
@@ -13382,7 +13384,7 @@ pinyin_data = [here|
 821E	wu3
 821F	zhou1
 8220	dao1
-8221	gang1
+8221	chuan2
 8222	shan1
 8223	yi3
 8224
@@ -13393,7 +13395,7 @@ pinyin_data = [here|
 8229	chuan2
 822A	hang2
 822B	fang3
-822C	ban1	bo1	pan2
+822C	ban1
 822D	bi3
 822E	lu2
 822F	zhong1
@@ -13402,7 +13404,7 @@ pinyin_data = [here|
 8232	ling2
 8233	zhu2
 8234	ze2
-8235	duo4	tuo2
+8235	duo4
 8236	bo2
 8237	xian2
 8238	ge3
@@ -13444,7 +13446,7 @@ pinyin_data = [here|
 825C	dai4
 825D
 825E	yao4
-825F	tong2	chong1
+825F	chong1
 8260
 8261	dang1
 8262	qiang2
@@ -13459,7 +13461,7 @@ pinyin_data = [here|
 826B	lu2
 826C	chan2
 826D	shuang1
-826E	gen4	gen3
+826E	gen4
 826F	liang2
 8270	jian1
 8271	jian1
@@ -13474,7 +13476,7 @@ pinyin_data = [here|
 827A	yi4
 827B	le4
 827C	ting1
-827D	qiu2	jiao1
+827D	jiao1
 827E	ai4	yi4
 827F	nai3
 8280	tiao2
@@ -13491,11 +13493,11 @@ pinyin_data = [here|
 828B	yu4
 828C	yu4
 828D	shao2
-828E	qiong1	qiong2	xiong1
-828F	tu3	du4
+828E	xiong1
+828F	du4
 8290	xia4
 8291	qi3
-8292	mang2	wang2
+8292	mang2
 8293	zi3
 8294	hui4
 8295	sui1
@@ -13514,13 +13516,13 @@ pinyin_data = [here|
 82A2	ren2
 82A3	fou2
 82A4	kou1
-82A5	jie4
+82A5	jie4	gai4
 82A6	lu2	lu3
 82A7	zhu4
-82A8	ji2
+82A8	ji1
 82A9	qin2
 82AA	qi2
-82AB	yan2
+82AB	yan2	yuan2
 82AC	fen1
 82AD	ba1
 82AE	rui4
@@ -13537,8 +13539,8 @@ pinyin_data = [here|
 82B9	qin2
 82BA	ao3
 82BB	chu2
-82BC	mao4	mao2
-82BD	ya2	di2
+82BC	mao4
+82BD	ya2
 82BE	fei4	fu2
 82BF	reng4
 82C0	hang2
@@ -13555,7 +13557,7 @@ pinyin_data = [here|
 82CB	xian4
 82CC	chang2
 82CD	cang1
-82CE	ning2	zhu4
+82CE	zhu4
 82CF	su1
 82D0	yi2	ti2
 82D1	yuan4
@@ -13577,8 +13579,8 @@ pinyin_data = [here|
 82E1	yi3
 82E2	yi3
 82E3	ju4	qu3
-82E4	pi3	pie3
-82E5	ruo4	re3
+82E4	pie3
+82E5	ruo4
 82E6	ku3
 82E7	zhu4	ning2
 82E8	ni3
@@ -13598,7 +13600,7 @@ pinyin_data = [here|
 82F6	nie2
 82F7	gan1
 82F8	hu1
-82F9	ping2	pin2
+82F9	ping2
 82FA	mei2
 82FB	fu2
 82FC	sheng1
@@ -13611,9 +13613,9 @@ pinyin_data = [here|
 8303	fan4
 8304	qie2	jia1
 8305	mao2
-8306	mao3	mao2
+8306	mao2
 8307	ba2
-8308	zi3
+8308	zi3	ci2
 8309	mo4
 830A	zi1
 830B	di3
@@ -13644,12 +13646,12 @@ pinyin_data = [here|
 8324	duo1
 8325	kui1
 8326	ce4
-8327	chong2	jian3
+8327	jian3
 8328	ci2
 8329	gou3
 832A	guang1
 832B	mang2
-832C	chi2	cha2
+832C	cha2
 832D	jiao1
 832E	jiao1
 832F	fu2
@@ -13661,8 +13663,8 @@ pinyin_data = [here|
 8335	yin1
 8336	cha2
 8337	fa2
-8338	rong2	rong3
-8339	ru2	ru4
+8338	rong2
+8339	ru2
 833A	chong1
 833B	mang3
 833C	tong2
@@ -13687,7 +13689,7 @@ pinyin_data = [here|
 834F	ren3
 8350	jian4
 8351	ti2	yi2
-8352	huang1
+8352	huang1	huang5
 8353	ping2
 8354	li4
 8355	jin1
@@ -13705,14 +13707,14 @@ pinyin_data = [here|
 8361	dang4
 8362
 8363	rong2
-8364	hun1	xun1
+8364	hun1
 8365	ying2	xing2
 8366	luo4
 8367	ying2
-8368	qian2
+8368	qian2	xun2
 8369	jin4
 836A	sun1
-836B	yin4	yin1
+836B	yin4
 836C	mai3
 836D	hong2
 836E	zhou4
@@ -13739,7 +13741,7 @@ pinyin_data = [here|
 8383	xi1
 8384	geng3
 8385	li4
-8386	fu3	pu2
+8386	pu2
 8387	zhu4
 8388	mo4
 8389	li4
@@ -13763,7 +13765,7 @@ pinyin_data = [here|
 839B	ting2
 839C	you2
 839D	cuo4
-839E	guan1	guan3	wan1
+839E	guan1	guan3	wan3
 839F	han4
 83A0	you3
 83A1	cuo4
@@ -13774,7 +13776,7 @@ pinyin_data = [here|
 83A6	shao1
 83A7	xian4
 83A8	lang4	liang2
-83A9	piao3
+83A9	fu2
 83AA	e2
 83AB	mo4
 83AC	wen4
@@ -13784,7 +13786,7 @@ pinyin_data = [here|
 83B0	kan3
 83B1	lai2
 83B2	lian2
-83B3	shi4
+83B3	shi4	shi2
 83B4	wo1
 83B5	tu2	tu4
 83B6	xian1
@@ -13797,9 +13799,9 @@ pinyin_data = [here|
 83BD	mang3
 83BE	mang3
 83BF	ci4
-83C0	yu4
+83C0	yu4	wan3
 83C1	jing1
-83C2	di1
+83C2	di4
 83C3	qu2
 83C4	dong1
 83C5	jian1
@@ -13812,7 +13814,7 @@ pinyin_data = [here|
 83CC	jun4	jun1
 83CD	nie4
 83CE	kun1
-83CF	he2	ge1
+83CF	he2
 83D0	pu2
 83D1	zai1
 83D2	gao3
@@ -13854,15 +13856,15 @@ pinyin_data = [here|
 83F6	beng3
 83F7	zhou3
 83F8	yan1
-83F9	ju1	zu1
+83F9	zu1
 83FA	jian1
 83FB	lin3
 83FC	tan3
-83FD	shu2	shu1
+83FD	shu1
 83FE	tian2
 83FF	dao4
 8400	hu3
-8401	qi2
+8401	ji1
 8402	he2
 8403	cui4
 8404	tao2
@@ -13875,7 +13877,7 @@ pinyin_data = [here|
 840B	qi1
 840C	meng2
 840D	ping2
-840E	wei1	wei3
+840E	wei3
 840F	dan4
 8410	sha4
 8411	huan2
@@ -13940,19 +13942,19 @@ pinyin_data = [here|
 844C	jian1
 844D	fu2
 844E	lu:4
-844F	ly4
+844F	lu:4
 8450	pen2
 8451	feng1	feng4
 8452	hong2
 8453	hong2
 8454	hou2
 8455	yan2
-8456	tu2
+8456	tu1
 8457	zhu4
 8458	zi1
 8459	xiang1
 845A	shen4	ren4
-845B	ge3
+845B	ge3	ge2
 845C	qia1
 845D	jing4
 845E	mi3
@@ -14022,7 +14024,7 @@ pinyin_data = [here|
 849E	li4
 849F	ju3
 84A0	xi2
-84A1	pang2	bang4
+84A1	bang4
 84A2	chu2
 84A3	xu2
 84A4	tu2
@@ -14056,11 +14058,11 @@ pinyin_data = [here|
 84C0	sun1
 84C1	zhen1
 84C2	ming2
-84C3	sou
+84C3
 84C4	xu4
 84C5	liu2
 84C6	xi2
-84C7	gu3
+84C7	gu1
 84C8	lang2
 84C9	rong2
 84CA	weng3
@@ -14082,7 +14084,7 @@ pinyin_data = [here|
 84DA	xiu1
 84DB	ce4
 84DC
-84DD	lan2	la5
+84DD	lan2	lan5
 84DE
 84DF	ji4
 84E0	li2
@@ -14136,14 +14138,14 @@ pinyin_data = [here|
 8510	di2
 8511	mie4
 8512	xun1
-8513	man4	man2	wan4
+8513	man4	wan4
 8514	bo5	bu3
 8515	di4
 8516	cuo2
 8517	zhe4
 8518	sen1
 8519	xuan4
-851A	yu4
+851A	yu4	wei4
 851B	hu2
 851C	ao2
 851D	mi3
@@ -14182,15 +14184,15 @@ pinyin_data = [here|
 853E	li2
 853F	wei3
 8540	ji2
-8541	xun2	qian2
+8541	qian2	xun2
 8542	sheng4
-8543	fan2	fan1
+8543	fan2	fan1	bo1
 8544	meng2
 8545	ou3
 8546	chan3
 8547	dian3
-8548	xun4	jun4
-8549	jiao1	qiao2
+8548	xun4
+8549	jiao1
 854A	rui3
 854B	rui3
 854C	lei3
@@ -14229,7 +14231,7 @@ pinyin_data = [here|
 856D	xiao1
 856E	xi4
 856F	yong1
-8570	yun4
+8570	wen1
 8571	shao1
 8572	qi2
 8573	jian1
@@ -14238,9 +14240,9 @@ pinyin_data = [here|
 8576	ling2
 8577	yu4
 8578	xia2
-8579	yong1	weng4
+8579	weng4
 857A	ji2
-857B	hong4	hong2
+857B	hong2
 857C	si4
 857D	deng1
 857E	lei3
@@ -14252,7 +14254,7 @@ pinyin_data = [here|
 8584	bo2	bao2	bo4
 8585	hao1
 8586	ai4
-8587	wei2	wei1
+8587	wei1
 8588	hui4
 8589	wei4
 858A	ji4
@@ -14273,7 +14275,7 @@ pinyin_data = [here|
 8599	ti4
 859A	tang2
 859B	xue1
-859C	bi4	bo4
+859C	bi4
 859D	zhan1
 859E	sun1
 859F	lian4	xian1
@@ -14318,7 +14320,7 @@ pinyin_data = [here|
 85C6	jian3
 85C7	xu4
 85C8	kui1
-85C9	jie4
+85C9	jie4	ji2
 85CA	bian3
 85CB	di2
 85CC	mi4
@@ -14328,7 +14330,7 @@ pinyin_data = [here|
 85D0	miao3
 85D1	qiong2
 85D2	qie4
-85D3	li4
+85D3	xian3
 85D4
 85D5	ou3
 85D6	xian2
@@ -14350,7 +14352,7 @@ pinyin_data = [here|
 85E6	mo4	mo2
 85E7	huan3
 85E8	biao1
-85E9	fan2	fan1
+85E9	fan1
 85EA	sou3
 85EB	tan2
 85EC	tui1
@@ -14483,7 +14485,7 @@ pinyin_data = [here|
 866B	chong2
 866C	qiu2
 866D	diao1
-866E	ji1	ji3
+866E	ji3
 866F	qiu2
 8670	ding1
 8671	shi1
@@ -14499,11 +14501,11 @@ pinyin_data = [here|
 867B	meng2
 867C	ge4
 867D	sui1
-867E	xia1	ha2
+867E	xia1
 867F	chai4
 8680	shi2
 8681	yi3
-8682	ma3	ma1	ma4
+8682	ma3
 8683	xiang4
 8684	fang1
 8685	e4
@@ -14514,7 +14516,7 @@ pinyin_data = [here|
 868A	wen2
 868B	rui4
 868C	bang4	beng4
-868D	bi3	pi2
+868D	pi2
 868E	yue4
 868F	yue4
 8690	jun1
@@ -14522,7 +14524,7 @@ pinyin_data = [here|
 8692	ran2
 8693	yin3
 8694	qi2	chi2
-8695	tian3	can2
+8695	can2
 8696	yuan2
 8697	jue2
 8698	hui2
@@ -14553,8 +14555,8 @@ pinyin_data = [here|
 86B1	zha4
 86B2	ping2
 86B3	chi2
-86B4	you1	you4
-86B5	he2
+86B4	you4
+86B5	he2	ke4
 86B6	han1
 86B7	ju4
 86B8	li4
@@ -14569,10 +14571,10 @@ pinyin_data = [here|
 86C1	diao1
 86C2	bie3
 86C3	bing3
-86C4	gu1	gu3
+86C4	gu1
 86C5	ran2
-86C6	qu1	ju1
-86C7	she2	yi2
+86C6	qu1
+86C7	she2
 86C8	tie4
 86C9	ling2
 86CA	gu3
@@ -14601,7 +14603,7 @@ pinyin_data = [here|
 86E1	yi4
 86E2	ping2
 86E3	ji1
-86E4	ha2
+86E4	ha2	ge2
 86E5	she2
 86E6	yi2
 86E7	wang3
@@ -14627,7 +14629,7 @@ pinyin_data = [here|
 86FB	tui4
 86FC	che1
 86FD	bai4
-86FE	e2	yi3
+86FE	e2
 86FF	han4
 8700	shu3
 8701	xuan2
@@ -14662,7 +14664,7 @@ pinyin_data = [here|
 871E	qi2
 871F	yu4
 8720	jun3
-8721	zha4	cha4	la4
+8721	la4
 8722	meng3
 8723	qiang1
 8724	si1
@@ -14729,8 +14731,8 @@ pinyin_data = [here|
 8761	ruan3
 8762	xie2
 8763	you2
-8764	you2
-8765	mao2	mou2
+8764	you2	qiu2
+8765	mao2
 8766	xia1	ha2
 8767	ying1
 8768	shi1
@@ -14762,7 +14764,7 @@ pinyin_data = [here|
 8782	lang2
 8783	pang2
 8784	si1	shi1
-8785	xi1	xi2
+8785	xi1
 8786	xi1
 8787	xi1
 8788	yuan2
@@ -14792,7 +14794,7 @@ pinyin_data = [here|
 87A0	yi4
 87A1	wen2
 87A2	ying2
-87A3	teng2
+87A3	teng2	te4
 87A4	yu3
 87A5	cang1
 87A6
@@ -14800,7 +14802,7 @@ pinyin_data = [here|
 87A8	man3
 87A9
 87AA	shang1
-87AB	zhe1	shi4
+87AB	shi4
 87AC	cao2
 87AD	chi1
 87AE	di4
@@ -14821,13 +14823,13 @@ pinyin_data = [here|
 87BD	zhong1
 87BE	yin3
 87BF	jiang1
-87C0	shuai4	shuo4
+87C0	shuai4
 87C1	wen2
 87C2	jiao1
 87C3	wan4
 87C4	zhe2
 87C5	zhe4
-87C6	ma2	ma5
+87C6	ma2
 87C7	ma2
 87C8	guo1
 87C9	liao4
@@ -14906,7 +14908,7 @@ pinyin_data = [here|
 8812	jian3
 8813	meng3
 8814	hao2
-8815	ruan3	ru2
+8815	ru2
 8816	huo4
 8817	zhuo2
 8818	jie2
@@ -14997,7 +14999,7 @@ pinyin_data = [here|
 886D	fu1
 886E	gun3
 886F	fen1
-8870	shuai1	cui1
+8870	shuai1
 8871	jie2	ji2
 8872	na4
 8873	zhong1
@@ -15050,17 +15052,17 @@ pinyin_data = [here|
 88A2	pan4
 88A3	yi4
 88A4	mao4
-88A5	tuo
+88A5
 88A6	na4
 88A7	kou1
 88A8	xuan4
 88A9	chan1
 88AA	qu1
-88AB	bei4	pi1
+88AB	bei4
 88AC	yu4
 88AD	xi2
 88AE
-88AF	bo1
+88AF	bo2
 88B0
 88B1	fu2
 88B2	yi2
@@ -15079,7 +15081,7 @@ pinyin_data = [here|
 88BF	gui1
 88C0	yin1
 88C1	cai2
-88C2	lie4	lie3
+88C2	lie4
 88C3
 88C4
 88C5	zhuang1
@@ -15125,10 +15127,10 @@ pinyin_data = [here|
 88ED	chi3
 88EE	chang1
 88EF	chou2
-88F0	duo2	duo1
+88F0	duo1
 88F1	biao3
 88F2	liang3
-88F3	chang2	shang5
+88F3	shang5
 88F4	pei2
 88F5	pei2
 88F6	fei1
@@ -15137,7 +15139,7 @@ pinyin_data = [here|
 88F9	guo3
 88FA	yan3
 88FB	du3
-88FC	xi2	ti4
+88FC	ti4	xi1
 88FD	zhi4
 88FE	ju1
 88FF	qi3
@@ -15157,7 +15159,7 @@ pinyin_data = [here|
 890D	duan1
 890E	xiu4
 890F	xiu4
-8910	he2	he4
+8910	he4
 8911	yuan4
 8912	bao1
 8913	bao3
@@ -15195,7 +15197,7 @@ pinyin_data = [here|
 8933	lian2
 8934	lan2
 8935	li2
-8936	zhe2	xi2	zhe3
+8936	zhe3
 8937	shi1
 8938	lu:3
 8939	yi4
@@ -15274,7 +15276,7 @@ pinyin_data = [here|
 8982	feng3
 8983	tan2	qin2
 8984
-8985	fiao4
+8985
 8986	fu4
 8987	ba4
 8988	he2
@@ -15334,7 +15336,7 @@ pinyin_data = [here|
 89BE	shen3
 89BF	di2
 89C0	guan1	guan4
-89C1	jian4	xian4
+89C1	jian4
 89C2	guan1	guan4
 89C3	yan4
 89C4	gui1
@@ -15350,8 +15352,8 @@ pinyin_data = [here|
 89CE	yu2
 89CF	gou4
 89D0	jin4
-89D1	qu4	qu1
-89D2	jiao3	jia3	jue2
+89D1	qu4
+89D2	jiao3	jue2
 89D3	jiu1
 89D4	jin1
 89D5	cu1
@@ -15371,7 +15373,7 @@ pinyin_data = [here|
 89E3	jie3	jie4	xie4
 89E4	gui3
 89E5	gong1
-89E6	hong2
+89E6	chu4
 89E7	jie3	jie4	xie4
 89E8	huan4
 89E9	qiu2
@@ -15662,7 +15664,7 @@ pinyin_data = [here|
 8B06	shan4
 8B07	jian3
 8B08	bo2
-8B09	ku14
+8B09
 8B0A	huang3
 8B0B	huo4
 8B0C	ge1
@@ -15739,7 +15741,7 @@ pinyin_data = [here|
 8B53	hui4
 8B54	zhuan4
 8B55	wu2
-8B56	zen4
+8B56	jian4
 8B57	zha2
 8B58	shi4	zhi4
 8B59	qiao2	qiao4
@@ -15851,7 +15853,7 @@ pinyin_data = [here|
 8BC3	he1
 8BC4	ping2
 8BC5	zu3
-8BC6	zhi4
+8BC6	zhi4	shi2
 8BC7	xiong4
 8BC8	zha4
 8BC9	su4
@@ -15890,27 +15892,27 @@ pinyin_data = [here|
 8BEA	zhou1
 8BEB	jie4
 8BEC	wu1
-8BED	yu3	yu4
+8BED	yu3
 8BEE	qiao4
 8BEF	wu4
 8BF0	gao4
 8BF1	you4
 8BF2	hui4
 8BF3	kuang2
-8BF4	shuo1	shui4	yue4
+8BF4	shuo1	shui4
 8BF5	song4
-8BF6	e^1	e^2	e^3	e^4
+8BF6	ei4	ei2	ei3
 8BF7	qing3
 8BF8	zhu1
 8BF9	zou1
 8BFA	nuo4
-8BFB	du2	dou4
+8BFB	du2
 8BFC	zhuo2
 8BFD	fei3
 8BFE	ke4
 8BFF	wei3
 8C00	yu2
-8C01	shui2	shei2
+8C01	shei2
 8C02	shen3
 8C03	diao4	tiao2
 8C04	chan3
@@ -15937,7 +15939,7 @@ pinyin_data = [here|
 8C19	an1
 8C1A	yan4
 8C1B	di4
-8C1C	mi2	mei4
+8C1C	mi2
 8C1D	pian3
 8C1E	xu3
 8C1F	mo2
@@ -15955,8 +15957,8 @@ pinyin_data = [here|
 8C2B	jian3
 8C2C	miu4
 8C2D	tan2
-8C2E	zen4
-8C2F	qiao2	qiao4
+8C2E	jian4
+8C2F	qiao2
 8C30	lan2
 8C31	pu3
 8C32	jue2
@@ -15964,7 +15966,7 @@ pinyin_data = [here|
 8C34	qian3
 8C35	zhan1
 8C36	chen4
-8C37	gu3	yu4
+8C37	gu3
 8C38	qian1
 8C39	hong2
 8C3A	ya2
@@ -15974,7 +15976,7 @@ pinyin_data = [here|
 8C3E	hong1
 8C3F	qi1
 8C40	xi1
-8C41	huo4	hua2	huo1
+8C41	huo4	huo1
 8C42	liao2
 8C43	han3
 8C44	du2
@@ -15982,7 +15984,7 @@ pinyin_data = [here|
 8C46	dou4
 8C47	jiang1
 8C48	qi3
-8C49	shi4	chi3
+8C49	chi3
 8C4A	feng1
 8C4B	deng1
 8C4C	wan1
@@ -16046,7 +16048,7 @@ pinyin_data = [here|
 8C86	huan2
 8C87	kun1
 8C88	he2
-8C89	he2	hao2	mo4
+8C89	he2	hao2
 8C8A	mo4
 8C8B	an4
 8C8C	mao4
@@ -16255,7 +16257,7 @@ pinyin_data = [here|
 8D57	feng4
 8D58	zhui4
 8D59	fu4
-8D5A	zhuan4	zuan4
+8D5A	zhuan4
 8D5B	sai4
 8D5C	ze2
 8D5D	yan4
@@ -16280,7 +16282,7 @@ pinyin_data = [here|
 8D70	zou3
 8D71	zou3
 8D72	li4
-8D73	jiu3	jiu1
+8D73	jiu1
 8D74	fu4
 8D75	zhao4
 8D76	gan3
@@ -16297,7 +16299,7 @@ pinyin_data = [here|
 8D81	chen4
 8D82	chen4
 8D83	die2
-8D84	ju1	ju4	qie4
+8D84	ju1	qie4	qie5
 8D85	chao1
 8D86	di1
 8D87	se4
@@ -16328,7 +16330,7 @@ pinyin_data = [here|
 8DA0	chuo4
 8DA1	cui3
 8DA2	lu4
-8DA3	qu4	cu4
+8DA3	qu4
 8DA4	dang4
 8DA5	qiu1
 8DA6	zi1
@@ -16344,7 +16346,7 @@ pinyin_data = [here|
 8DB0
 8DB1	zan3
 8DB2	zan3	zan4
-8DB3	zu2	ju4
+8DB3	zu2
 8DB4	pa1
 8DB5	bao4	bo1
 8DB6	ku4
@@ -16356,7 +16358,7 @@ pinyin_data = [here|
 8DBC	jian3
 8DBD	fang4
 8DBE	zhi3
-8DBF	sa4	ta1
+8DBF	ta1
 8DC0	yue4
 8DC1	pa2
 8DC2	qi2
@@ -16369,17 +16371,17 @@ pinyin_data = [here|
 8DC9	ling2
 8DCA	mei4
 8DCB	ba2
-8DCC	die1	die2
+8DCC	die1
 8DCD	ku1
 8DCE	tuo2
 8DCF	jia1
 8DD0	ci3
-8DD1	pao3	pao2
+8DD1	pao3
 8DD2	qia3
 8DD3	zhu4
 8DD4	ju1
 8DD5	die2
-8DD6	zhi1	zhi2
+8DD6	zhi2
 8DD7	fu1
 8DD8	pan2
 8DD9	ju3
@@ -16411,7 +16413,7 @@ pinyin_data = [here|
 8DF3	tiao4
 8DF4	cai3
 8DF5	jian4
-8DF6	ta4
+8DF6	da5
 8DF7	qiao1
 8DF8	bi4
 8DF9	xian1
@@ -16430,13 +16432,13 @@ pinyin_data = [here|
 8E06	qun1
 8E07	mou3
 8E08	shu1
-8E09	liang2	liang4
+8E09	liang4
 8E0A	yong3
 8E0B	jiao3	jia3	jue2
 8E0C	chou2
 8E0D	xiao4
 8E0E
-8E0F	ta4	ta1
+8E0F	ta4
 8E10	jian4
 8E11	qi2
 8E12	wo1
@@ -16467,7 +16469,7 @@ pinyin_data = [here|
 8E2B	pan2
 8E2C	zhi4
 8E2D	zheng1
-8E2E	dian3	dian4	die1
+8E2E	dian3
 8E2F	zhi2
 8E30	yu2
 8E31	duo2
@@ -16475,7 +16477,7 @@ pinyin_data = [here|
 8E33	chun3
 8E34	yong3
 8E35	zhong3
-8E36	di3
+8E36	di4
 8E37	zha3
 8E38	chen3
 8E39	chuai4
@@ -16493,7 +16495,7 @@ pinyin_data = [here|
 8E45	cha3
 8E46	tui3
 8E47	jian3
-8E48	dao4
+8E48	dao3
 8E49	cuo1
 8E4A	xi1	qi1
 8E4B	ta4
@@ -16504,7 +16506,7 @@ pinyin_data = [here|
 8E50	ji2
 8E51	nie4
 8E52	pan2
-8E53	liu1	liu4
+8E53	liu4
 8E54	zhan4
 8E55	bi4
 8E56	chong1
@@ -16513,7 +16515,7 @@ pinyin_data = [here|
 8E59	cu4
 8E5A	tang1
 8E5B	dai4
-8E5C	suo1
+8E5C	su4
 8E5D	xi3
 8E5E	kui3
 8E5F	ji1
@@ -16535,7 +16537,7 @@ pinyin_data = [here|
 8E6F	fan2
 8E70	chu2
 8E71	zhong1
-8E72	dun1	cun2
+8E72	dun1
 8E73	bo1
 8E74	cu4
 8E75	zu2
@@ -16592,7 +16594,7 @@ pinyin_data = [here|
 8EA8	kui2
 8EA9	jue2
 8EAA	lin4
-8EAB	shen1	juan1
+8EAB	shen1
 8EAC	gong1
 8EAD	dan1
 8EAE
@@ -16783,7 +16785,7 @@ pinyin_data = [here|
 8F67	ya4	zha2
 8F68	gui3
 8F69	xuan1
-8F6A	di4
+8F6A	dai4
 8F6B	ren4
 8F6C	zhuan3	zhuai3	zhuan4
 8F6D	e4
@@ -16791,7 +16793,7 @@ pinyin_data = [here|
 8F6F	ruan3
 8F70	hong1
 8F71	gu1
-8F72	ke1	ke3
+8F72	ke1
 8F73	lu2
 8F74	zhou2	zhou4
 8F75	zhi3
@@ -16822,7 +16824,7 @@ pinyin_data = [here|
 8F8E	zi1
 8F8F	cou4
 8F90	fu2
-8F91	ji2
+8F91	ji2	ji5
 8F92	wen1
 8F93	shu1
 8F94	pei4
@@ -16854,7 +16856,7 @@ pinyin_data = [here|
 8FAE	bian4
 8FAF	bian4
 8FB0	chen2
-8FB1	ru4	ru3
+8FB1	ru3
 8FB2	nong2
 8FB3	nong2
 8FB4	zhen3
@@ -16881,7 +16883,7 @@ pinyin_data = [here|
 8FC9	qi2
 8FCA	za1
 8FCB	wang4
-8FCC	jia
+8FCC
 8FCD	zhun1
 8FCE	ying2
 8FCF	ti4
@@ -16893,8 +16895,8 @@ pinyin_data = [here|
 8FD5	wu3
 8FD6	ta4
 8FD7	e2
-8FD8	hai2
-8FD9	zhe4	zhei4
+8FD8	hai2	huan2
+8FD9	zhe4
 8FDA
 8FDB	jin4
 8FDC	yuan3
@@ -16926,7 +16928,7 @@ pinyin_data = [here|
 8FF6	you4
 8FF7	mi2
 8FF8	beng4
-8FF9	ji1
+8FF9	ji4
 8FFA	nai3
 8FFB	yi2
 8FFC	jie2
@@ -16935,7 +16937,7 @@ pinyin_data = [here|
 8FFF	xun4
 9000	tui4
 9001	song4
-9002	gua1	kuo4	shi4
+9002	shi4
 9003	tao2
 9004	pang2
 9005	hou4
@@ -16958,7 +16960,7 @@ pinyin_data = [here|
 9016	ti4
 9017	dou4
 9018	yi3
-9019	zhe4	zhei4
+9019	zhe4
 901A	tong1	tong4
 901B	guang4
 901C	wu4
@@ -17010,7 +17012,7 @@ pinyin_data = [here|
 904A	you2
 904B	yun4
 904C	e4
-904D	bian4	pian4
+904D	bian4
 904E	guo4	guo1
 904F	e4
 9050	xia2
@@ -17031,7 +17033,7 @@ pinyin_data = [here|
 905F	chi2
 9060	yuan3	yuan4
 9061	su4
-9062	ta4	ta1
+9062	ta4
 9063	qian3
 9064
 9065	yao2
@@ -17072,7 +17074,7 @@ pinyin_data = [here|
 9088	miao3
 9089	bian1
 908A	bian1
-908B	la2	la1
+908B	la1
 908C	li2
 908D	yuan2
 908E	you2
@@ -17097,7 +17099,7 @@ pinyin_data = [here|
 90A1	fang1
 90A2	xing2
 90A3	na4	na1
-90A4	xin
+90A4
 90A5	shen3
 90A6	bang1
 90A7	yuan2
@@ -17112,7 +17114,7 @@ pinyin_data = [here|
 90B0	tai2
 90B1	qiu1
 90B2	bi4
-90B3	pei2	pi1
+90B3	pi1
 90B4	bing3
 90B5	shao4
 90B6	bei4
@@ -17132,7 +17134,7 @@ pinyin_data = [here|
 90C4	qie4
 90C5	zhi4
 90C6	ji2
-90C7	xun2
+90C7	xun2	huan2
 90C8	hou4
 90C9	xing2
 90CA	jiao1
@@ -17148,13 +17150,13 @@ pinyin_data = [here|
 90D4	yan2
 90D5	cheng2
 90D6	dou1
-90D7	chi1	xi1
+90D7	xi1
 90D8	lu:3
 90D9	fu3
 90DA	wu2
 90DB	fu2
 90DC	gao4
-90DD	hao3	he4
+90DD	hao3
 90DE	lang2
 90DF	jia2
 90E0	geng3
@@ -17171,7 +17173,7 @@ pinyin_data = [here|
 90EB	pi2
 90EC	qing1
 90ED	guo1
-90EE	zhou
+90EE
 90EF	tan2
 90F0	zou1
 90F1	ping2
@@ -17214,7 +17216,7 @@ pinyin_data = [here|
 9116	yun2
 9117	hao4
 9118	yong1
-9119	bi3	bi4
+9119	bi3
 911A	mao4
 911B	chao2
 911C	fu1
@@ -17268,8 +17270,8 @@ pinyin_data = [here|
 914C	zhuo2
 914D	pei4
 914E	zhou4
-914F	yi2	yi3
-9150	hang3	gan1
+914F	yi2	yi4
+9150	gan1
 9151	yu3
 9152	jiu3
 9153	yan3
@@ -17287,14 +17289,14 @@ pinyin_data = [here|
 915F	tian1
 9160	qia3
 9161	tuo2
-9162	zuo4
+9162	zuo4	cu4
 9163	han1
 9164	gu1
 9165	su1
 9166	fa1	po1
 9167	chou2
 9168	dai4
-9169	ming2	ming3
+9169	ming3
 916A	lao4
 916B	chuo4
 916C	chou2
@@ -17362,7 +17364,7 @@ pinyin_data = [here|
 91AA	lao2
 91AB	yi1
 91AC	jiang4
-91AD	pu1	bu2
+91AD	bu2
 91AE	jiao4
 91AF	xi1
 91B0	tan2
@@ -17388,7 +17390,7 @@ pinyin_data = [here|
 91C4	mi2
 91C5	yan4
 91C6	bian4
-91C7	cai3	cai4
+91C7	cai3
 91C8	shi4
 91C9	you4
 91CA	shi4
@@ -17396,7 +17398,7 @@ pinyin_data = [here|
 91CC	li3
 91CD	zhong4	chong2
 91CE	ye3
-91CF	liang4	liang2
+91CF	liang4	liang2	liang5
 91D0	li2
 91D1	jin1
 91D2	jin1
@@ -17517,7 +17519,7 @@ pinyin_data = [here|
 9245	ju4
 9246	zhan1
 9247	ta1	tuo2
-9248	she2	ta1	tuo2
+9248	tuo2	she2
 9249	xuan4
 924A	zhao1
 924B	bao4
@@ -17587,7 +17589,7 @@ pinyin_data = [here|
 928B	ren2
 928C	cun4
 928D	zhi4
-928E	qiong1	qiong2
+928E	qiong2
 928F	shan4
 9290	chi4
 9291	xian3	xi3
@@ -17599,7 +17601,7 @@ pinyin_data = [here|
 9297	hou2
 9298	ming2
 9299	kua3
-929A	yao2	diao4
+929A	yao2	diao4	tiao2
 929B	xian1
 929C	xian2
 929D	xiu1
@@ -17668,10 +17670,10 @@ pinyin_data = [here|
 92DC	zhuo2
 92DD	lu:e4
 92DE	xing2
-92DF	qin2
+92DF	qin3
 92E0	shen4
 92E1	han2
-92E2	l«¦4
+92E2
 92E3	ye2
 92E4	chu2
 92E5	zeng4
@@ -17707,7 +17709,7 @@ pinyin_data = [here|
 9303	bei1
 9304	lu4
 9305	li2
-9306	qiang1
+9306	qing1
 9307	pei2
 9308	juan3
 9309	min2
@@ -18132,7 +18134,7 @@ pinyin_data = [here|
 94AC	huo3
 94AD	tou3
 94AE	niu3
-94AF	ba3	pa2
+94AF	ba3
 94B0	yu4
 94B1	qian2
 94B2	zheng1
@@ -18159,10 +18161,10 @@ pinyin_data = [here|
 94C7	bao4
 94C8	shi4
 94C9	xuan4
-94CA	ta1	tuo2
+94CA	tuo2	she2
 94CB	bi4
 94CC	ni2
-94CD	pi1	pi2
+94CD	pi2
 94CE	duo2
 94CF	xing2
 94D0	kao4
@@ -18192,12 +18194,12 @@ pinyin_data = [here|
 94E8	quan2
 94E9	sha1
 94EA	ha1
-94EB	yao2	diao4
+94EB	yao2	diao4	tiao2
 94EC	ge4
 94ED	ming2
-94EE	zheng1	zheng4
+94EE	zheng1
 94EF	se4
-94F0	jiao3	jia3
+94F0	jiao3
 94F1	yi1
 94F2	chan3
 94F3	chong4
@@ -18232,11 +18234,11 @@ pinyin_data = [here|
 9510	rui4
 9511	ti1
 9512	lang2
-9513	qin2
-9514	ju1
+9513	qin3
+9514	ju1	ju2
 9515	a1
-9516	qiang1
-9517	zang1	zhe3
+9516	qing1
+9517	zhe3
 9518	nuo4
 9519	cuo4
 951A	mao2
@@ -18255,12 +18257,12 @@ pinyin_data = [here|
 9527	zhi4
 9528	xian1
 9529	juan3
-952A	huo1
+952A	huo4
 952B	pei2
 952C	tan2
 952D	ding4
 952E	jian4
-952F	ju4	ju1
+952F	ju4
 9530	meng3
 9531	zi1
 9532	qie4
@@ -18310,12 +18312,12 @@ pinyin_data = [here|
 955E	zu2
 955F	xuan4
 9560	liu2
-9561	chan2	xin2
+9561	chan2	xin2	tan2
 9562	jue2
 9563	liao4
 9564	pu2
 9565	lu3
-9566	dui4	dun1
+9566	dun1
 9567	lan2
 9568	pu3
 9569	cuan1
@@ -18367,7 +18369,7 @@ pinyin_data = [here|
 9597	dou4
 9598	zha2
 9599	nao4
-959A	jian
+959A
 959B	peng1
 959C	ke3
 959D	ling2
@@ -18406,7 +18408,7 @@ pinyin_data = [here|
 95BE	yu4
 95BF	wen2
 95C0	xiang4
-95C1	bao
+95C1
 95C2	xiang4
 95C3	qu4
 95C4	yao3
@@ -18418,12 +18420,12 @@ pinyin_data = [here|
 95CA	kuo4
 95CB	que4
 95CC	lan2
-95CD	du1
+95CD	du1	she2
 95CE
 95CF
 95D0	tian2
 95D1	nie4
-95D2	ta4
+95D2	da2	ta4
 95D3	kai3
 95D4	he2
 95D5	que4	que1
@@ -18459,7 +18461,7 @@ pinyin_data = [here|
 95F3	hong2
 95F4	jian1	jian4
 95F5	min3
-95F6	kang4	kang1
+95F6	kang1
 95F7	men4	men1
 95F8	zha2
 95F9	nao4
@@ -18468,7 +18470,7 @@ pinyin_data = [here|
 95FC	ta4
 95FD	min3
 95FE	lu:2
-95FF	kai1
+95FF	kai3
 9600	fa2
 9601	ge2
 9602	he2
@@ -18476,7 +18478,7 @@ pinyin_data = [here|
 9604	jiu1
 9605	yue4
 9606	lang2	lang4
-9607	du1
+9607	du1	she2
 9608	yu4
 9609	yan1
 960A	chang1
@@ -18484,7 +18486,7 @@ pinyin_data = [here|
 960C	wen2
 960D	hun1
 960E	yan2
-960F	e4	yan1
+960F	yan1
 9610	chan3
 9611	lan2
 9612	qu4
@@ -18493,9 +18495,9 @@ pinyin_data = [here|
 9615	que4
 9616	he2
 9617	tian2
-9618	da2
-9619	que1
-961A	han3	kan3
+9618	da2	ta4
+9619	que1	que4
+961A	kan4
 961B	huan2
 961C	fu4
 961D	fu4	yi4
@@ -18539,7 +18541,7 @@ pinyin_data = [here|
 9643	bing3
 9644	fu4
 9645	ji4
-9646	liu4
+9646	liu4	lu4
 9647	long3
 9648	chen2
 9649	xing2
@@ -18587,10 +18589,10 @@ pinyin_data = [here|
 9673	chen2
 9674	pi2
 9675	ling2
-9676	tao2	yao2
+9676	tao2
 9677	xian4
 9678	lu4	liu4
-9679	sheng
+9679
 967A	xian3
 967B	yin1
 967C	zhu3
@@ -18620,7 +18622,7 @@ pinyin_data = [here|
 9694	ge2
 9695	yun3
 9696	wu4
-9697	wei3
+9697	wei3	kui2
 9698	ai4
 9699	xi4
 969A	tang2
@@ -18654,11 +18656,11 @@ pinyin_data = [here|
 96B6	li4
 96B7	li4
 96B8	li4
-96B9	zhui1
+96B9	zhui1	cui1
 96BA	he4
 96BB	zhi1
-96BC	zhun3	sun3
-96BD	jun4	juan4
+96BC	sun3
+96BD	juan4
 96BE	nan2	nan4
 96BF	yi4
 96C0	que4	qiao1
@@ -18666,14 +18668,14 @@ pinyin_data = [here|
 96C2	qin2
 96C3	ya3
 96C4	xiong2
-96C5	ya3	ya1
+96C5	ya3
 96C6	ji2
 96C7	gu4
 96C8	huan2
 96C9	zhi4
 96CA	gou4
 96CB	jun4
-96CC	ci2	ci1
+96CC	ci2
 96CD	yong1
 96CE	ju1
 96CF	chu2
@@ -18701,9 +18703,9 @@ pinyin_data = [here|
 96E5	za2
 96E6	ji2
 96E7	ji2
-96E8	yu3	yu4
+96E8	yu3
 96E9	yu2
-96EA	xue3	xue4
+96EA	xue3
 96EB	na3
 96EC	fou3
 96ED	se4
@@ -18773,7 +18775,7 @@ pinyin_data = [here|
 972D	ai3
 972E	dan4
 972F	deng4
-9730	xian4	san3
+9730	xian4
 9731	yu4
 9732	lu4	lou4
 9733	long2	long1
@@ -18808,7 +18810,7 @@ pinyin_data = [here|
 9750	bing4
 9751	qing1
 9752	qing1
-9753	liang4
+9753	jing4
 9754	qi2
 9755	zhen1
 9756	jing4
@@ -18830,7 +18832,7 @@ pinyin_data = [here|
 9766	tian3	mian3
 9767	hui4
 9768	ye4
-9769	ge2	ji2	ji3
+9769	ge2
 976A	ding1
 976B	ren4
 976C	jian1
@@ -18854,11 +18856,11 @@ pinyin_data = [here|
 977E	yi4
 977F	yao4
 9780	tao2
-9781	tuo2
+9781	bei4
 9782	jia2
 9783	hong2
 9784	pao2
-9785	yang3	yang1	yang4
+9785	yang1	yang4
 9786	mo4
 9787	yin1
 9788	jia2
@@ -18885,8 +18887,8 @@ pinyin_data = [here|
 979D	zhang3
 979E	bing3
 979F	kuo4
-97A0	ju2	ju1
-97A1	la1
+97A0	ju1
+97A1	la5
 97A2	xie4
 97A3	rou2
 97A4	bang1
@@ -18896,7 +18898,7 @@ pinyin_data = [here|
 97A8	he2
 97A9	xiao4
 97AA	mu4
-97AB	ju2	ju1
+97AB	ju1
 97AC	jian1
 97AD	bian1
 97AE	di1
@@ -19108,7 +19110,7 @@ pinyin_data = [here|
 987C	xu1
 987D	wan2
 987E	gu4
-987F	dun4	du2
+987F	dun4
 9880	qi2
 9881	ban1
 9882	song4
@@ -19204,7 +19206,7 @@ pinyin_data = [here|
 98DC	fan1
 98DD	fei1
 98DE	fei1
-98DF	shi2	si4
+98DF	shi2
 98E0	shi2	si4
 98E1	can1
 98E2	ji1
@@ -19214,7 +19216,7 @@ pinyin_data = [here|
 98E6	jian1
 98E7	sun1
 98E8	xiang3
-98E9	tun2
+98E9	tun5
 98EA	ren4
 98EB	yu4
 98EC	juan4
@@ -19341,7 +19343,7 @@ pinyin_data = [here|
 9965	ji1
 9966	tuo1
 9967	xing2	tang2
-9968	tun2
+9968	tun5
 9969	xi4
 996A	ren4
 996B	yu4
@@ -19358,8 +19360,8 @@ pinyin_data = [here|
 9976	rao2
 9977	xiang3
 9978	he2
-9979	ge1
-997A	jiao3	jia3
+9979	le5
+997A	jiao3
 997B	xi1
 997C	bing3
 997D	bo1
@@ -19405,7 +19407,7 @@ pinyin_data = [here|
 99A5	fu4
 99A6	xian1
 99A7	wen1
-99A8	xin1	xing1
+99A8	xin1
 99A9	fen2
 99AA	bin1
 99AB	xing1
@@ -19417,7 +19419,7 @@ pinyin_data = [here|
 99B1	tuo2	duo4
 99B2	tuo1
 99B3	chi2
-99B4	xun2	xun4
+99B4	xun4
 99B5	zhu4
 99B6	zhi1
 99B7	pei4
@@ -19476,7 +19478,7 @@ pinyin_data = [here|
 99EC	er3
 99ED	hai4
 99EE	bo2
-99EF	zhu
+99EF
 99F0	yin1
 99F1	luo4
 99F2
@@ -19572,7 +19574,7 @@ pinyin_data = [here|
 9A4C	su4
 9A4D	xiao1
 9A4E	lin2
-9A4F	chan3
+9A4F	zhan4
 9A50	dun1
 9A51	liu2
 9A52	tuo2
@@ -19604,7 +19606,7 @@ pinyin_data = [here|
 9A6C	ma3
 9A6D	yu4
 9A6E	tuo2	duo4
-9A6F	xun2
+9A6F	xun4
 9A70	chi2
 9A71	qu1
 9A72	ri4
@@ -19621,7 +19623,7 @@ pinyin_data = [here|
 9A7D	nu2
 9A7E	jia4
 9A7F	yi4
-9A80	tai2
+9A80	tai2	dai4
 9A81	xiao1
 9A82	ma4
 9A83	yin1
@@ -19656,7 +19658,7 @@ pinyin_data = [here|
 9AA0	piao4	biao1
 9AA1	luo2
 9AA2	cong1
-9AA3	chan3
+9AA3	zhan4
 9AA4	zhou4
 9AA5	ji4
 9AA6	shuang1
@@ -19669,7 +19671,7 @@ pinyin_data = [here|
 9AAD	gan4
 9AAE	yi4
 9AAF	ang1
-9AB0	tou2	shai3
+9AB0	tou2
 9AB1	xie4	jie4
 9AB2	bo2
 9AB3	bi4
@@ -19686,8 +19688,8 @@ pinyin_data = [here|
 9ABE	geng3
 9ABF	pian2
 9AC0	bi4
-9AC1	ke1	ke4
-9AC2	ka4	qia4
+9AC1	ke1
+9AC2	qia4
 9AC3	yu2
 9AC4	sui3
 9AC5	lou2
@@ -19732,7 +19734,7 @@ pinyin_data = [here|
 9AEC	pi1
 9AED	zi1
 9AEE	fa4
-9AEF	ran2	ran3
+9AEF	ran2
 9AF0	ti4
 9AF1	pao4
 9AF2	pi4
@@ -19741,7 +19743,7 @@ pinyin_data = [here|
 9AF5	er2
 9AF6	rong2
 9AF7	qu1
-9AF8	gong
+9AF8
 9AF9	xiu1
 9AFA	gua4
 9AFB	ji4
@@ -19757,7 +19759,7 @@ pinyin_data = [here|
 9B05	peng2
 9B06	song1
 9B07	zheng1
-9B08	quan2	qian2
+9B08	quan2
 9B09	zong1
 9B0A	shun4
 9B0B	jian1
@@ -19799,7 +19801,7 @@ pinyin_data = [here|
 9B2F	chang4
 9B30	yu4
 9B31	yu4
-9B32	li4
+9B32	li4	ge2
 9B33	juan4
 9B34	fu3
 9B35	qian2
@@ -19817,7 +19819,7 @@ pinyin_data = [here|
 9B41	kui2
 9B42	hun2
 9B43	ba2
-9B44	po4	tuo4
+9B44	po4
 9B45	mei4
 9B46	xu1
 9B47	yan3
@@ -19896,7 +19898,7 @@ pinyin_data = [here|
 9B90	tai2
 9B91	bao4
 9B92	fu4
-9B93	zha4
+9B93	zha3
 9B94	ju4
 9B95	gu1
 9B96
@@ -19922,7 +19924,7 @@ pinyin_data = [here|
 9BAA	wei3
 9BAB	jiao1
 9BAC	pu4
-9BAD	gui1
+9BAD	gui1	xie2
 9BAE	xian1	xian3
 9BAF	ge2
 9BB0	hui2
@@ -19943,7 +19945,7 @@ pinyin_data = [here|
 9BBF	zhe2
 9BC0	gun3
 9BC1	geng3
-9BC2	su
+9BC2
 9BC3	wu2
 9BC4	qiu2
 9BC5	ting2
@@ -19996,7 +19998,7 @@ pinyin_data = [here|
 9BF4	shi1
 9BF5	sao1
 9BF6	hun3
-9BF7	shi4
+9BF7	ti2
 9BF8	hou2
 9BF9	xing1
 9BFA	ju1
@@ -20143,14 +20145,14 @@ pinyin_data = [here|
 9C87	nian2
 9C88	lu2
 9C89	you2
-9C8A	zha4
+9C8A	zha3
 9C8B	fu4
-9C8C	ba4
+9C8C	ba4	bo2
 9C8D	bao4
 9C8E	hou4
 9C8F	pi2
 9C90	tai2
-9C91	gui1
+9C91	gui1	xie2
 9C92	jie2
 9C93	kao4
 9C94	wei3
@@ -20161,7 +20163,7 @@ pinyin_data = [here|
 9C99	kuai4
 9C9A	ji4
 9C9B	jiao1
-9C9C	xian1
+9C9C	xian1	xian3
 9C9D	zha3
 9C9E	xiang3
 9C9F	xun2
@@ -20190,14 +20192,14 @@ pinyin_data = [here|
 9CB6	nian2
 9CB7	diao1
 9CB8	jing1
-9CB9	sao1
+9CB9	shen1
 9CBA	shi1
 9CBB	zi1
 9CBC	fen4
 9CBD	die2
-9CBE	bi4
+9CBE	bi1
 9CBF	chang2
-9CC0	di4
+9CC0	ti2
 9CC1	wen1
 9CC2	wei1
 9CC3	sai1
@@ -20461,8 +20463,8 @@ pinyin_data = [here|
 9DC5	li4	piao3
 9DC6	tian2
 9DC7	kou4
-9DC8	si1
-9DC9	ti2
+9DC8	ti1
+9DC9	ti1
 9DCA	ni4
 9DCB	tu2
 9DCC	ma3
@@ -20704,7 +20706,7 @@ pinyin_data = [here|
 9EB8	fu1
 9EB9	qu1
 9EBA	mian4
-9EBB	ma2	ma1
+9EBB	ma2
 9EBC	ma2
 9EBD	mo2
 9EBE	hui1
@@ -20726,7 +20728,7 @@ pinyin_data = [here|
 9ECE	li2
 9ECF	nian2
 9ED0	chi1	li2
-9ED1	hei1	hei3
+9ED1	hei1
 9ED2	hei1
 9ED3	yi4
 9ED4	qian2
@@ -20771,7 +20773,7 @@ pinyin_data = [here|
 9EFB	fu2
 9EFC	fu3
 9EFD	min3	mian3
-9EFE	min3	mian3
+9EFE	min3
 9EFF	yuan2
 9F00	cu4
 9F01	qu4
@@ -20834,7 +20836,7 @@ pinyin_data = [here|
 9F3A	lei2
 9F3B	bi2
 9F3C	yao2
-9F3D	yan3
+9F3D	yan3	qui2
 9F3E	han1
 9F3F	hui1
 9F40	wu4

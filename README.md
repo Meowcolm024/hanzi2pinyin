@@ -2,6 +2,8 @@
 
 This work is just a simple modification of `sort-by-pinyin` by *Jinjing Wang*. (See [Hackage](https://hackage.haskell.org/package/sort-by-pinyin-2018.4.9))
 
+Updated Pinyin Table :)
+
 ## Dependencies
 
 Dependencies needed: `air`, `here`, `containers`

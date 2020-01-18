@@ -3,6 +3,7 @@ Original work `sort-by-pinyin` by JinjingWang (Jinjing Wang <nfjinjing@gmail.com
 Hackage: https://hackage.haskell.org/package/sort-by-pinyin-2018.4.9
 Licensced under BSD3
 -}
+
 module Hanzi2Pinyin
     ( toPinyins
     , toPinyin
