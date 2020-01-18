@@ -1,6 +1,6 @@
 # Hanzi2Pinyin
 
-This work is just a simple modification of `sort-by-pinyin` by *Jinjing Wang*.
+This work is just a simple modification of `sort-by-pinyin` by *Jinjing Wang*. (See [Hackage](https://hackage.haskell.org/package/sort-by-pinyin-2018.4.9))
 
 ## Usage
 
@@ -12,6 +12,8 @@ This work is just a simple modification of `sort-by-pinyin` by *Jinjing Wang*.
 *Hanzi2Pinyin> toPinyin "落霞與孤鶩齊飛，秋水共長天一色。"
 "luo4-xia2-yu3-gu1-mu4-qi2-fei1-X-qiu1-shui3-gong4-chang2-tian1-yi1-se4-X"
 ```
+
+- Copy `Hanzi2Pinyin.hs` and `Hanzi2PinyinData.hs` to your project and import them :)
 
 ## API
 

@@ -60,6 +60,7 @@ toPinyinMode :: Char -> String -> String
 toPinyinMode 'u' x = concat $ List.intersperse "-" $ map (map Char.toUpper) (toPinyins x)
 toPinyinMode 't' x = concat $ List.intersperse "-" $ map (\(x:xs) -> Char.toUpper x : xs) (toPinyins x)
 toPinyinMode  _  x = toPinyin x
+
 {-
 REMOVED: character-pinyin comparsion
 -}
