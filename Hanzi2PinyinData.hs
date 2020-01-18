@@ -12,8 +12,8 @@ module Hanzi2PinyinData where
 -- import Text.Here
 import Data.String.Here
 
-pinyin_data :: String
-pinyin_data = [here|
+pinyinData :: String
+pinyinData = [here|
 #
 #	Name:            Unicode Pinyin table
 #	Unicode version: 1.1

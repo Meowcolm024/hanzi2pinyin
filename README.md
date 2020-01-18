@@ -24,15 +24,33 @@ Dependencies needed: `air`, `here`, `containers`
 
 ## API
 
+### `showPinyin`
+
 ``` haskell
 -- sig
-toPinyins :: String -> [String]
+showPinyin :: Char -> Maybe String
+-- usage
+*Hanzi2Pinyin> showPinyin '国'
+Just "guo2"
+*Hanzi2Pinyin> showPinyin 'a'
+Nothing
+```
+
+- Show the pinyin of the character
+
+### `toPinyinPrim`
+
+``` haskell
+-- sig
+toPinyinPrim :: String -> [String]
 -- usage:
-*Hanzi2Pinyin> toPinyins "江州司馬青衫濕"
+*Hanzi2Pinyin> toPinyinPrim "江州司馬青衫濕"
 ["jiang1","zhou1","si1","ma3","qing1","shan1","shi1"]
 ```
 
-- Convert every character to a list of string
+- Convert every character to a list of string, for characters without matching pinyin, they will be converted to `X`
+
+### `toPinyin`
 
 ``` haskell
 -- sig
@@ -43,6 +61,8 @@ toPinyin :: String -> String
 ```
 
 - convert to pinyins linked with `-`, for characters without matching pinyin, they will be converted to `X`
+
+### `toPinyinMode`
 
 ``` haskell
 -- sig

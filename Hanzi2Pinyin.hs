@@ -5,7 +5,8 @@ Licensced under BSD3
 -}
 
 module Hanzi2Pinyin
-    ( toPinyins
+    ( showPinyin
+    , toPinyinPrim
     , toPinyin
     , toPinyinMode
     )
@@ -18,22 +19,22 @@ import qualified Data.ByteString.Char8         as StrictByteString
 import qualified Data.Map                      as Map
 import qualified Data.List                     as List
 
-import           Hanzi2PinyinData               ( pinyin_data )
+import           Hanzi2PinyinData               ( pinyinData )
 
 import           Air.Env
 import           Prelude                        ( )
 
 pinyins :: [String]
-pinyins = pinyin_data . lines . reject (starts_with "#")
+pinyins = pinyinData . lines . reject (starts_with "#")
 
-pinyin_char_map :: Map.Map Char String
-pinyin_char_map =
+pinyinCharMap :: Map.Map Char String
+pinyinCharMap =
     pinyins
         . map words
         . map (take 2)
         . reject (length > is_not 2)
         . map (\(x : y : _) -> (x, y))
-        . map_fst hex_to_char
+        . map_fst hexToChar
         . concatMap
               (\(x, y) -> case x of
                   Nothing -> []
@@ -41,27 +42,27 @@ pinyin_char_map =
               )
         . to_h
 
-hex_to_char :: String -> Maybe Char
-hex_to_char x = case Text.Read.hexadecimal (Text.pack x) of
+hexToChar :: String -> Maybe Char
+hexToChar x = case Text.Read.hexadecimal (Text.pack x) of
     Left  _              -> Nothing
     Right (int_value, _) -> Just - Char.chr int_value
 
-show_pinyin :: Char -> Maybe String
-show_pinyin x = pinyin_char_map . Map.lookup x
+showPinyin :: Char -> Maybe String
+showPinyin x = pinyinCharMap . Map.lookup x
 
-toPinyins :: String -> [String]
-toPinyins x = map f $ map show_pinyin x  where
+toPinyinPrim :: String -> [String]
+toPinyinPrim x = map f $ map showPinyin x  where
     f Nothing  = "X"
     f (Just p) = p
 
 toPinyin :: String -> String
-toPinyin x = concat $ List.intersperse "-" (toPinyins x)
+toPinyin x = concat $ List.intersperse "-" (toPinyinPrim x)
 
 toPinyinMode :: Char -> String -> String
-toPinyinMode 'u' x = concat $ List.intersperse "-" $ map (map Char.toUpper) (toPinyins x)
-toPinyinMode 't' x = concat $ List.intersperse "-" $ map (\(x:xs) -> Char.toUpper x : xs) (toPinyins x)
+toPinyinMode 'u' x = concat $ List.intersperse "-" $ map (map Char.toUpper) (toPinyinPrim x)
+toPinyinMode 't' x = concat $ List.intersperse "-" $ map (\(x : xs) -> Char.toUpper x : xs) (toPinyinPrim x)
 toPinyinMode  _  x = toPinyin x
 
 {-
-REMOVED: character-pinyin comparsion
+REMOVED: hanzi-pinyin comparsion
 -}
