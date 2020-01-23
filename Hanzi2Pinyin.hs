@@ -59,9 +59,15 @@ toPinyin :: String -> String
 toPinyin x = concat $ List.intersperse "-" (toPinyinPrim x)
 
 toPinyinMode :: Char -> String -> String
-toPinyinMode 'u' x = concat $ List.intersperse "-" $ map (map Char.toUpper) (toPinyinPrim x)
-toPinyinMode 't' x = concat $ List.intersperse "-" $ map (\(x : xs) -> Char.toUpper x : xs) (toPinyinPrim x)
-toPinyinMode  _  x = toPinyin x
+toPinyinMode 'u' x =
+    concat $ List.intersperse "-" $ map (map Char.toUpper) (toPinyinPrim x)
+toPinyinMode 't' x = concat $ List.intersperse "-" $ map
+    (\(x : xs) -> Char.toUpper x : xs)
+    (toPinyinPrim x)
+toPinyinMode 'i' x = concat $ List.intersperse "-" $ map
+    (filter Char.isAlpha)
+    (toPinyinPrim x)
+toPinyinMode _ x = toPinyin x
 
 {-
 REMOVED: hanzi-pinyin comparsion

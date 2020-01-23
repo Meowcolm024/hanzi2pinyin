@@ -74,6 +74,9 @@ toPinyinMode :: Char -> String -> String
 -- 't' for first letter capital
 *Hanzi2Pinyin> toPinyinMode 't' "謇朝誶而夕替"
 "Jian3-Zhao1-Sui4-Er2-Xi1-Ti4"
+-- 'i' to ignore pitch
+*Hanzi2Pinyin> toPinyinMode 'i' "非禮勿視，非禮勿聽"
+"fei-li-wu-shi-X-fei-li-wu-ting"
 -- for other tags, this function is equal to `toPinyin`
 ```
 
